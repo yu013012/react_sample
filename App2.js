@@ -36,7 +36,7 @@ export default class App extends Component<{}> {
     // 開始
     BleManager.start({ showAlert: false }).then(() => {
       // 1時間スキャンする
-      BleManager.scan([], 6000, true).then(() => {
+      BleManager.scan([], 18000, true).then(() => {
         // スキャンがうまくできれば
         bleManagerEmitter.addListener(
           'BleManagerDiscoverPeripheral',

@@ -6,41 +6,41 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-9        android:targetSdkVersion="29" />
+9        android:targetSdkVersion="31" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\debug\AndroidManifest.xml:5:5-77
-11-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:4:5-67
-12-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:4:22-64
+12-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:4:5-67
+12-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:4:22-64
 13
 14    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
-14-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:5:5-85
-14-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:5:29-83
+14-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:5:5-85
+14-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:5:29-83
 15
 16    <uses-feature
-16-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:6:5-89
+16-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:5-89
 17        android:name="android.hardware.bluetooth_le"
-17-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:6:19-63
+17-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:19-63
 18        android:required="true" />
-18-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:6:64-87
+18-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:64-87
 19
 20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Request legacy Bluetooth permissions on older devices. -->
-20-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:7:5-76
-20-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:7:22-74
+20-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:5-76
+20-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:22-74
 21    <uses-permission
-21-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:9:5-10:38
+21-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:9:5-10:38
 22        android:name="android.permission.BLUETOOTH"
-22-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:9:22-65
+22-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:9:22-65
 23        android:maxSdkVersion="30" />
-23-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:10:9-35
+23-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:10:9-35
 24    <uses-permission
-24-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:11:5-12:38
+24-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:11:5-12:38
 25        android:name="android.permission.BLUETOOTH_ADMIN"
-25-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:11:22-71
+25-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:11:22-71
 26        android:maxSdkVersion="30" />
-26-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:12:9-35
+26-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:12:9-35
 27    <!--
 28 Needed only if your app looks for Bluetooth devices.
 29         You must add an attribute to this permission, or declare the
@@ -48,77 +48,77 @@
 31         check location usage in your app.
 32    -->
 33    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-33-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:18:5-73
-33-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:18:22-70
+33-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:18:5-73
+33-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:18:22-70
 34    <!--
 35 Needed only if your app makes the device discoverable to Bluetooth
 36         devices.
 37    -->
 38    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
-38-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:22:5-78
-38-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:22:22-75
+38-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:22:5-78
+38-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:22:22-75
 39    <!--
 40 Needed only if your app communicates with already-paired Bluetooth
 41         devices.
 42    -->
 43    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-43-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:26:5-76
-43-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:26:22-73
+43-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:26:5-76
+43-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:26:22-73
 44    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 44-->[com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
 44-->[com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
 45    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-45-->[:react-native-ble-manager] C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
-45-->[:react-native-ble-manager] C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+45-->[:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+45-->[:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
 46
 47    <application
-47-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:27:5-46:19
+47-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:27:5-46:19
 48        android:name="com.projectname.MainApplication"
-48-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:28:7-38
+48-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:28:7-38
 49        android:allowBackup="false"
-49-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:32:7-34
+49-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:32:7-34
 50        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-50-->[androidx.core:core:1.5.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\f382564408e8806e991bcb7c984abfd6\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+50-->[androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 51        android:debuggable="true"
 52        android:icon="@mipmap/ic_launcher"
-52-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:30:7-41
+52-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:30:7-41
 53        android:label="@string/app_name"
-53-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:29:7-39
+53-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:29:7-39
 54        android:roundIcon="@mipmap/ic_launcher_round"
-54-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:31:7-52
+54-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:31:7-52
 55        android:theme="@style/AppTheme"
-55-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:33:7-38
+55-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:33:7-38
 56        android:usesCleartextTraffic="true" >
-56-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\debug\AndroidManifest.xml:8:9-44
+56-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:8:9-44
 57        <activity
-57-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\debug\AndroidManifest.xml:11:9-111
+57-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:9-111
 58            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-58-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\debug\AndroidManifest.xml:11:19-83
+58-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:19-83
 59            android:exported="false" />
-59-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\debug\AndroidManifest.xml:11:84-108
+59-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:84-108
 60        <activity
-60-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:34:7-45:18
+60-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:34:7-45:18
 61            android:name="com.projectname.MainActivity"
-61-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:35:9-37
+61-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:35:9-37
 62            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-62-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:37:9-118
+62-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:37:9-118
 63            android:exported="true"
-63-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:40:9-32
+63-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:40:9-32
 64            android:label="@string/app_name"
-64-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:36:9-41
+64-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:36:9-41
 65            android:launchMode="singleTask"
-65-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:38:9-40
+65-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:38:9-40
 66            android:windowSoftInputMode="adjustResize" >
-66-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:39:9-51
+66-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:39:9-51
 67            <intent-filter>
-67-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:41:9-44:25
+67-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:41:9-44:25
 68                <action android:name="android.intent.action.MAIN" />
-68-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:42:13-65
-68-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:42:21-62
+68-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:42:13-65
+68-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:42:21-62
 69
 70                <category android:name="android.intent.category.LAUNCHER" />
-70-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:43:13-73
-70-->C:\Users\YuNiwa\Desktop\ProjectNameMac\ProjectNameMac\android\app\src\main\AndroidManifest.xml:43:23-70
+70-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:43:13-73
+70-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:43:23-70
 71            </intent-filter>
 72        </activity>
 73    </application>
