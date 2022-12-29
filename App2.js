@@ -77,6 +77,60 @@ export default class App extends Component<{}> {
               blue_write(uuid, "D94920AE-A124-D354-33A8-74C416FDCF7E")
               blue_notification(uuid, "D94920AE-A124-D354-33A8-74C416FDCF7E")
             }
+            uuid = "4C:02:2E:7E:56:CB";
+            if (Platform.OS == 'ios') {
+              uuid = "0A79209D-CD97-80A4-FEB2-586D0E152A9B";
+            }
+            if (args.id == uuid) {
+              blue_connect(uuid)
+              blue_write(uuid, "0A79209D-CD97-80A4-FEB2-586D0E152A9B")
+              blue_notification(uuid, "0A79209D-CD97-80A4-FEB2-586D0E152A9B")
+            }
+            uuid = "4C:02:2E:7E:5D:97";
+            if (Platform.OS == 'ios') {
+              uuid = "354142CC-FC1F-3D4E-1D1F-0F391742C4AD";
+            }
+            if (args.id == uuid) {
+              blue_connect(uuid)
+              blue_write(uuid, "354142CC-FC1F-3D4E-1D1F-0F391742C4AD")
+              blue_notification(uuid, "354142CC-FC1F-3D4E-1D1F-0F391742C4AD")
+            }
+            uuid = "4C:02:2E:7E:57:9F";
+            if (Platform.OS == 'ios') {
+              uuid = "C1372667-C51E-030B-D005-702D82F11356";
+            }
+            if (args.id == uuid) {
+              blue_connect(uuid)
+              blue_write(uuid, "C1372667-C51E-030B-D005-702D82F11356")
+              blue_notification(uuid, "C1372667-C51E-030B-D005-702D82F11356")
+            }
+            uuid = "4C:02:2E:7E:57:22";
+            if (Platform.OS == 'ios') {
+              uuid = "F2500A70-6471-1E29-C47D-3BFAA6AA7C40";
+            }
+            if (args.id == uuid) {
+              blue_connect(uuid)
+              blue_write(uuid, "F2500A70-6471-1E29-C47D-3BFAA6AA7C40")
+              blue_notification(uuid, "F2500A70-6471-1E29-C47D-3BFAA6AA7C40")
+            }
+            uuid = "4C:02:2E:7E:57:0A";
+            if (Platform.OS == 'ios') {
+              uuid = "AC936418-D8B7-D747-A4B0-200FC50D61CF";
+            }
+            if (args.id == uuid) {
+              blue_connect(uuid)
+              blue_write(uuid, "AC936418-D8B7-D747-A4B0-200FC50D61CF")
+              blue_notification(uuid, "AC936418-D8B7-D747-A4B0-200FC50D61CF")
+            }
+            uuid = "4C:02:2E:7E:56:C7";
+            if (Platform.OS == 'ios') {
+              uuid = "F361DD9B-F42D-CCC7-FAC9-F4339B3502E0";
+            }
+            if (args.id == uuid) {
+              blue_connect(uuid)
+              blue_write(uuid, "F361DD9B-F42D-CCC7-FAC9-F4339B3502E0")
+              blue_notification(uuid, "F361DD9B-F42D-CCC7-FAC9-F4339B3502E0")
+            }
           }
         );
       }).catch((error) => {
@@ -100,6 +154,30 @@ export default class App extends Component<{}> {
         if (Platform.OS == 'ios') {
           uuid3 = "D94920AE-A124-D354-33A8-74C416FDCF7E";
         }
+        var uuid4 = "4C:02:2E:7E:56:CB";
+        if (Platform.OS == 'ios') {
+          uuid4 = "0A79209D-CD97-80A4-FEB2-586D0E152A9B";
+        }
+        var uuid5 = "4C:02:2E:7E:5D:97";
+        if (Platform.OS == 'ios') {
+          uuid5 = "354142CC-FC1F-3D4E-1D1F-0F391742C4AD";
+        }
+        var uuid6 = "4C:02:2E:7E:57:9F";
+        if (Platform.OS == 'ios') {
+          uuid6 = "C1372667-C51E-030B-D005-702D82F11356";
+        }
+        var uuid7 = "4C:02:2E:7E:57:22";
+        if (Platform.OS == 'ios') {
+          uuid7 = "F2500A70-6471-1E29-C47D-3BFAA6AA7C40";
+        }
+        var uuid8 = "4C:02:2E:7E:57:0A";
+        if (Platform.OS == 'ios') {
+          uuid8 = "AC936418-D8B7-D747-A4B0-200FC50D61CF";
+        }
+        var uuid9 = "4C:02:2E:7E:56:C7";
+        if (Platform.OS == 'ios') {
+          uuid9 = "F361DD9B-F42D-CCC7-FAC9-F4339B3502E0";
+        }
         if (31 <= monthAry[17] && monthAry[17] <= 65) {
           //うつ伏せフラグをオン
           if (peripheral == uuid) {
@@ -113,6 +191,30 @@ export default class App extends Component<{}> {
           } else if (peripheral == uuid3) {
             state_this.setState({
               count4: "↓"
+            })
+          } else if (peripheral == uuid4) {
+            state_this.setState({
+              count5: "↓"
+            })
+          } else if (peripheral == uuid5) {
+            state_this.setState({
+              count6: "↓"
+            })
+          } else if (peripheral == uuid6) {
+            state_this.setState({
+              count7: "↓"
+            })
+          } else if (peripheral == uuid7) {
+            state_this.setState({
+              count8: "↓"
+            })
+          } else if (peripheral == uuid8) {
+            state_this.setState({
+              count9: "↓"
+            })
+          } else if (peripheral == uuid9) {
+            state_this.setState({
+              count10: "↓"
             })
           } else {
             state_this.setState({
@@ -134,6 +236,30 @@ export default class App extends Component<{}> {
             state_this.setState({
               count4: "↑"
             })
+          } else if (peripheral == uuid4) {
+            state_this.setState({
+              count5: "↑"
+            })
+          } else if (peripheral == uuid5) {
+            state_this.setState({
+              count6: "↑"
+            })
+          } else if (peripheral == uuid6) {
+            state_this.setState({
+              count7: "↑"
+            })
+          } else if (peripheral == uuid7) {
+            state_this.setState({
+              count8: "↑"
+            })
+          } else if (peripheral == uuid8) {
+            state_this.setState({
+              count9: "↑"
+            })
+          } else if (peripheral == uuid9) {
+            state_this.setState({
+              count10: "↑"
+            })
           } else {
             state_this.setState({
               count: "↑"
@@ -145,38 +271,86 @@ export default class App extends Component<{}> {
           if (224 <= monthAry[17] && monthAry[17] <= 255) {
             if (peripheral == uuid) {
               state_this.setState({
-                count2: "→"
+                count2: "⇨"
               })
             } else if (peripheral == uuid2) {
               state_this.setState({
-                count3: "→"
+                count3: "⇨"
               })
             } else if (peripheral == uuid3) {
               state_this.setState({
-                count4: "→"
+                count4: "⇨"
+              })
+            } else if (peripheral == uuid4) {
+              state_this.setState({
+                count5: "⇨"
+              })
+            } else if (peripheral == uuid5) {
+              state_this.setState({
+                count6: "⇨"
+              })
+            } else if (peripheral == uuid6) {
+              state_this.setState({
+                count7: "⇨"
+              })
+            } else if (peripheral == uuid7) {
+              state_this.setState({
+                count8: "⇨"
+              })
+            } else if (peripheral == uuid8) {
+              state_this.setState({
+                count9: "⇨"
+              })
+            } else if (peripheral == uuid9) {
+              state_this.setState({
+                count10: "⇨"
               })
             } else {
               state_this.setState({
-                count: "→"
+                count: "⇨"
               })
             }
           // 左向き
           } else if (0 <= monthAry[17] && monthAry[17] <= 30) {
             if (peripheral == uuid) {
               state_this.setState({
-                count2: "←"
+                count2: "⇦"
               })
             } else if (peripheral == uuid2) {
               state_this.setState({
-                count3: "←"
+                count3: "⇦"
               })
             } else if (peripheral == uuid3) {
               state_this.setState({
-                count4: "←"
+                count4: "⇦"
+              })
+            } else if (peripheral == uuid4) {
+              state_this.setState({
+                count5: "⇦"
+              })
+            } else if (peripheral == uuid5) {
+              state_this.setState({
+                count6: "⇦"
+              })
+            } else if (peripheral == uuid6) {
+              state_this.setState({
+                count7: "⇦"
+              })
+            } else if (peripheral == uuid7) {
+              state_this.setState({
+                count8: "⇦"
+              })
+            } else if (peripheral == uuid8) {
+              state_this.setState({
+                count9: "⇦"
+              })
+            } else if (peripheral == uuid9) {
+              state_this.setState({
+                count10: "⇦"
               })
             } else {
               state_this.setState({
-                count: "←"
+                count: "⇦"
               })
             }
           }
@@ -193,6 +367,30 @@ export default class App extends Component<{}> {
           } else if (peripheral == uuid3) {
             state_this.setState({
               count4: "↑"
+            })
+          } else if (peripheral == uuid4) {
+            state_this.setState({
+              count5: "↑"
+            })
+          } else if (peripheral == uuid5) {
+            state_this.setState({
+              count6: "↑"
+            })
+          } else if (peripheral == uuid6) {
+            state_this.setState({
+              count7: "↑"
+            })
+          } else if (peripheral == uuid7) {
+            state_this.setState({
+              count8: "↑"
+            })
+          } else if (peripheral == uuid8) {
+            state_this.setState({
+              count9: "↑"
+            })
+          } else if (peripheral == uuid9) {
+            state_this.setState({
+              count10: "↑"
             })
           } else {
             state_this.setState({
