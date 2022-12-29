@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import {StyleSheet, View, Text, Button, TextInput, SafeAreaView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import App2 from './App2';
@@ -28,9 +28,13 @@ const App = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
 });
@@ -38,16 +42,22 @@ const styles = StyleSheet.create({
 
 function DetailsScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text>IDを入力させる</Text>
-      <Text>PASSWORDを入力させる</Text>
+    <SafeAreaView>
+      <TextInput
+        style={styles.input}
+        placeholder="ID"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="パスワード"
+      />
       <Button
         title="ログイン"
         onPress={() => {
           navigation.navigate('Home');
         }}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 
