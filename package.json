@@ -13,6 +13,7 @@
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/stack": "^6.3.10",
+    "axios": "^1.2.2",
     "big-integer": "^1.6.51",
     "convert-string": "^0.1.0",
     "react": "17.0.2",
