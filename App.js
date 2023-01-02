@@ -1,24 +1,52 @@
-import React, { Component, useState } from 'react';
-import {StyleSheet, View, Text, Button, TextInput, SafeAreaView} from 'react-native';
+import React, { Component, useState, useEffect } from 'react';
+import {StyleSheet, View, Text, Button, TextInput, SafeAreaView, AsyncStorage} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import App2 from './App2';
 import axios from "axios";
+import Storage from 'react-native-storage';
+
 let this_;
 const Stack = createStackNavigator()
 let navigation_;
 let id, setId, pass, setPass, error, setError;
+
 export default class App extends Component<{}> {
   
   constructor(props) {
     super(props);
     this_ = this;
-    this.state = {
-      text: "dsfs",
-    };
+    setTimeout(() => {
+      // データの存在を確認
+      this_.loadItem();
+    }, 1000);
   }  
+  
+  // データの存在を確認、存在すればページ遷移
+  loadItem = async () => {
+    try {
+      const todoString = await AsyncStorage.getItem("tno");
+      console.log("todoString");
+      console.log(todoString);
+      if(todoString) {
+        navigation_.navigate('Home');
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
+  // データの保存
+  saveItem = async(counter) => {
+    try {
+      await AsyncStorage.setItem("tno", counter);
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  
   render() {
+    console.log("kljlk1");
     return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
@@ -54,6 +82,7 @@ function login_action () {
   const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=CHECK_TNO&ID="+id+"&PASS="+pass;
   axios.get(baseURL).then((response) => {
     if (response.data.tno) {
+      this_.saveItem(response.data.tno);
       navigation_.navigate('Home');
     } else {
       //エラー表示
@@ -68,6 +97,7 @@ function DetailsScreen({ navigation }) {
   [id, setId] = useState('');
   [pass, setPass] = useState('');
   [error, setError] = useState('');
+  
   return (
     <SafeAreaView>
       <Text style={styles.text}>
