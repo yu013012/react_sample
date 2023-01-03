@@ -10,6 +10,7 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\YuNiw
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\df731ac58fe0112a493f9730ba0671c1\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-community_masked-view] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\@react-native-community\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:react-native-device-info] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-safe-area-context] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -44,6 +45,11 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\YuN
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\aa57ff3ce2015847aa0b72d99132ba86\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2fa1c1bb511a790a674eefcef2075aa\transformed\jetified-core-ktx-1.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6656116c8ef532d42c3b0001eda45954\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\c283fe0e5ba08d7e718764c149356ae6\transformed\jetified-play-services-stats-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e65a8b10ece4b303a3853a1244e91072\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\460f707a98ca30d659c55d0af740e8a5\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\YuNiwa\.gradle\caches\transforms-3\fa5673892f2eb4bac1a553c16525d1a8\transformed\fragment-1.3.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\000634452e2a6e3478fcbddcff1ba8cb\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -56,6 +62,7 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\YuNiwa\.gradle\c
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\c8273fa885909ca67232676c28fc218f\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.2.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e34f23f166ba047a8cd5504be5cc44c2\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\344a34c26439bf03c0529e7406151c1f\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\93829add0e4f45c796a8a060a5b87cff\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6dcfad40ce61ece4738360beb445cf45\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\YuNiwa\.gradle\caches\transforms-3\026d9a07e2404c8e8b926c84dc89fc1c\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
@@ -67,6 +74,10 @@ MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\YuNiwa\.gradle\caches\tran
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a82a9a1b169999c7869e0239c40f1514\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\YuNiwa\.gradle\caches\transforms-3\8c4f4207472eb79fd90ca97204dd8c2e\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\ce91150bb7fb05f70a42033bb97da78f\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\79163c133a8793c5c0e5d00e7087bf10\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\2096766628f12184b5deb4651c08b5b5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\9bdeb687976f00af90cf5f35581388b4\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:2:1-13:12
 MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\53007099516bea6db8367ba9bce19768\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\248c0f564962b01f80874ef1b418707d\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 INJECTED from C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:2:1-13:12
@@ -93,6 +104,8 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:4:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:24:5-67
 	android:name
 		ADDED from C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:4:22-64
 uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
@@ -149,10 +162,22 @@ MERGED from [com.facebook.soloader:soloader:0.10.3] C:\Users\YuNiwa\.gradle\cach
 MERGED from [com.facebook.soloader:soloader:0.10.3] C:\Users\YuNiwa\.gradle\caches\transforms-3\d1cf27a24c7f89c3464d079b8866a14d\transformed\jetified-soloader-0.10.3\AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\f61858ab2d463bfc75fa0b69b40e6339\transformed\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\f61858ab2d463bfc75fa0b69b40e6339\transformed\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\c283fe0e5ba08d7e718764c149356ae6\transformed\jetified-play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\c283fe0e5ba08d7e718764c149356ae6\transformed\jetified-play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e65a8b10ece4b303a3853a1244e91072\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e65a8b10ece4b303a3853a1244e91072\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\YuNiwa\.gradle\caches\transforms-3\fe3e391fdb037f499c7b6cfdeb5e5dc4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\YuNiwa\.gradle\caches\transforms-3\fe3e391fdb037f499c7b6cfdeb5e5dc4\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:11:5-20
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:11:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
@@ -217,6 +242,8 @@ MERGED from [:react-native-community_masked-view] C:\Users\YuNiwa\Desktop\gosui_
 MERGED from [:react-native-community_masked-view] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\@react-native-community\masked-view\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:react-native-device-info] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-device-info] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-device-info\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -285,6 +312,16 @@ MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\YuNiwa\.gradle\caches\transf
 MERGED from [androidx.core:core-ktx:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2fa1c1bb511a790a674eefcef2075aa\transformed\jetified-core-ktx-1.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6656116c8ef532d42c3b0001eda45954\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6656116c8ef532d42c3b0001eda45954\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\c283fe0e5ba08d7e718764c149356ae6\transformed\jetified-play-services-stats-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\c283fe0e5ba08d7e718764c149356ae6\transformed\jetified-play-services-stats-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e65a8b10ece4b303a3853a1244e91072\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e65a8b10ece4b303a3853a1244e91072\transformed\jetified-play-services-tasks-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\460f707a98ca30d659c55d0af740e8a5\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\460f707a98ca30d659c55d0af740e8a5\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\YuNiwa\.gradle\caches\transforms-3\fa5673892f2eb4bac1a553c16525d1a8\transformed\fragment-1.3.4\AndroidManifest.xml:20:5-22:41
@@ -309,6 +346,8 @@ MERGED from [androidx.transition:transition:1.2.0] C:\Users\YuNiwa\.gradle\cache
 MERGED from [androidx.transition:transition:1.2.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\e34f23f166ba047a8cd5504be5cc44c2\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\344a34c26439bf03c0529e7406151c1f\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\344a34c26439bf03c0529e7406151c1f\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\93829add0e4f45c796a8a060a5b87cff\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\93829add0e4f45c796a8a060a5b87cff\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6dcfad40ce61ece4738360beb445cf45\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6dcfad40ce61ece4738360beb445cf45\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:20:5-22:41
@@ -331,6 +370,14 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\YuNiwa\.
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\YuNiwa\.gradle\caches\transforms-3\8c4f4207472eb79fd90ca97204dd8c2e\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\ce91150bb7fb05f70a42033bb97da78f\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\ce91150bb7fb05f70a42033bb97da78f\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\79163c133a8793c5c0e5d00e7087bf10\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\79163c133a8793c5c0e5d00e7087bf10\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\2096766628f12184b5deb4651c08b5b5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\2096766628f12184b5deb4651c08b5b5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\9bdeb687976f00af90cf5f35581388b4\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\9bdeb687976f00af90cf5f35581388b4\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\53007099516bea6db8367ba9bce19768\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\53007099516bea6db8367ba9bce19768\transformed\jetified-fbcore-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\248c0f564962b01f80874ef1b418707d\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -361,3 +408,25 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from [:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
 	android:name
 		ADDED from [:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:22-79
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:5-110
+	android:name
+		ADDED from [com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:22-107
