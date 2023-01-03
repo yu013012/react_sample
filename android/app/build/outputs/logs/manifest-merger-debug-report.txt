@@ -17,6 +17,7 @@ MERGED from [com.facebook.react:react-native:0.68.5] C:\Users\YuNiwa\.gradle\cac
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6ca4772dc16ee0aa26e0cc717aaeee42\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r250230] C:\Users\YuNiwa\.gradle\caches\transforms-3\b26b48339e296557281f3d12b79a5a5f\transformed\jetified-android-jsc-r250230\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-reanimated\android\build\.transforms\be3850d2dd1981ad1d2cce80cfba721a\transformed\jetified-react-native-reanimated-68-jsc\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-sound] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-sound\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-10:12
 MERGED from [com.facebook.fresco:flipper:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\f1204f1df4399a7f5bba753264d308f1\transformed\jetified-flipper-2.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:stetho:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\48655c27af2d8105f1ca68a72c6d2d94\transformed\jetified-stetho-2.6.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:fresco:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\955859de3514d49daf50e48783988c6b\transformed\jetified-fresco-2.6.0\AndroidManifest.xml:2:1-9:12
@@ -230,6 +231,8 @@ MERGED from [org.webkit:android-jsc:r250230] C:\Users\YuNiwa\.gradle\caches\tran
 MERGED from [org.webkit:android-jsc:r250230] C:\Users\YuNiwa\.gradle\caches\transforms-3\b26b48339e296557281f3d12b79a5a5f\transformed\jetified-android-jsc-r250230\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-reanimated] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-reanimated\android\build\.transforms\be3850d2dd1981ad1d2cce80cfba721a\transformed\jetified-react-native-reanimated-68-jsc\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-reanimated] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-reanimated\android\build\.transforms\be3850d2dd1981ad1d2cce80cfba721a\transformed\jetified-react-native-reanimated-68-jsc\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-sound] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-sound\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
+MERGED from [:react-native-sound] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-sound\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-8:41
 MERGED from [com.facebook.fresco:flipper:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\f1204f1df4399a7f5bba753264d308f1\transformed\jetified-flipper-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:flipper:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\f1204f1df4399a7f5bba753264d308f1\transformed\jetified-flipper-2.6.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:stetho:2.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\48655c27af2d8105f1ca68a72c6d2d94\transformed\jetified-stetho-2.6.0\AndroidManifest.xml:5:5-7:41

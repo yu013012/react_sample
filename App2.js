@@ -7,15 +7,20 @@ import {
   Button,
   View,
   NativeModules,
-  NativeEventEmitter
+  NativeEventEmitter,
+  Modal
 } from 'react-native';
+import Sound from 'react-native-sound';
 import BleManager from 'react-native-ble-manager';
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
+
 let state = 0;
 let state_this;
+let sound_flg = 0;
 export default class App extends Component<{}> {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +34,15 @@ export default class App extends Component<{}> {
       count8: "",
       count9: "",
       count10: "",
+      modalVisible: false,
     };
+    
     state_this = this;
+    this.alerm = new Sound('alert.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error) {
+        sound_flg = 1;
+      }
+    });
     // stateにはこれがいる(変更可能にする)
     //this.blue_notification = this.blue_notification.bind(this);
     // 開始
@@ -179,7 +191,13 @@ export default class App extends Component<{}> {
           uuid9 = "F361DD9B-F42D-CCC7-FAC9-F4339B3502E0";
         }
         if (31 <= monthAry[17] && monthAry[17] <= 65) {
-          //うつ伏せフラグをオン
+          //うつ伏せモーダル表示
+          this.setState({modalVisible:true});
+          // うつ伏せアラーム
+          if (sound_flg == 0) {
+            this.alerm.play();
+          }
+
           if (peripheral == uuid) {
             state_this.setState({
               count2: "↓"
@@ -223,6 +241,7 @@ export default class App extends Component<{}> {
           }
         // 仰向けの時(z軸128~223、仰向けMIN191がとれるが時々条件不明で165等が取得できるので128まで見るようにしている)
         } else if (128 <= monthAry[17] && monthAry[17] <= 223) {
+          this.setState({modalVisible:false});
           // ↑
           if (peripheral == uuid) {
             state_this.setState({
@@ -267,6 +286,7 @@ export default class App extends Component<{}> {
           }
           // 横向きの時(z軸224~255 or 0~30)
         } else if (224 <= monthAry[17] && monthAry[17] <= 255 || 0 <= monthAry[17] && monthAry[17] <= 30) {
+          this.setState({modalVisible:false});
           // 右向き
           if (224 <= monthAry[17] && monthAry[17] <= 255) {
             if (peripheral == uuid) {
@@ -355,6 +375,7 @@ export default class App extends Component<{}> {
             }
           }
         } else {
+          this.setState({modalVisible:false});
           /* 72 ~ 127 : シェイク判定??*/
           if (peripheral == uuid) {
             state_this.setState({
@@ -405,36 +426,43 @@ export default class App extends Component<{}> {
   render() {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>
-            NO.1 山田 { this.state.count }
-            </Text>
-            <Text style={styles.text}>
-            NO.2 佐藤 { this.state.count2 }
-            </Text>
-            <Text style={styles.text}>
-            NO.3 丹羽 { this.state.count3 }
-            </Text>
-            <Text style={styles.text}>
-            NO.4 高橋 { this.state.count4 }
-            </Text>
-            <Text style={styles.text}>
-            NO.5 坂本 { this.state.count5 }
-            </Text>
-            <Text style={styles.text}>
-            NO.6 鈴木 { this.state.count6 }
-            </Text>
-            <Text style={styles.text}>
-            NO.7 花子 { this.state.count7 }
-            </Text>
-            <Text style={styles.text}>
-            NO.8 太郎 { this.state.count8 }
-            </Text>
-            <Text style={styles.text}>
-            NO.9 三郎 { this.state.count9 }
-            </Text>
-            <Text style={styles.text}>
-            NO.10 史郎 { this.state.count10 }
-            </Text>
+          <Text style={styles.text}>
+          NO.1 山田 { this.state.count }
+          </Text>
+          <Text style={styles.text}>
+          NO.2 佐藤 { this.state.count2 }
+          </Text>
+          <Text style={styles.text}>
+          NO.3 丹羽 { this.state.count3 }
+          </Text>
+          <Text style={styles.text}>
+          NO.4 高橋 { this.state.count4 }
+          </Text>
+          <Text style={styles.text}>
+          NO.5 坂本 { this.state.count5 }
+          </Text>
+          <Text style={styles.text}>
+          NO.6 鈴木 { this.state.count6 }
+          </Text>
+          <Text style={styles.text}>
+          NO.7 花子 { this.state.count7 }
+          </Text>
+          <Text style={styles.text}>
+          NO.8 太郎 { this.state.count8 }
+          </Text>
+          <Text style={styles.text}>
+          NO.9 三郎 { this.state.count9 }
+          </Text>
+          <Text style={styles.text}>
+          NO.10 史郎 { this.state.count10 }
+          </Text>
+          <Modal visible={this.state.modalVisible}>
+            <View style={styles.container}>
+              <Text style={styles.text}>
+                うつ伏せになっています
+              </Text>
+            </View>
+          </Modal>
         </View>
     );
   }
