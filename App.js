@@ -26,8 +26,6 @@ export default class App extends Component<{}> {
   loadItem = async () => {
     try {
       const todoString = await AsyncStorage.getItem("tno");
-      console.log("todoString");
-      console.log(todoString);
       if(todoString) {
         navigation_.navigate('Home');
       }
@@ -37,16 +35,19 @@ export default class App extends Component<{}> {
   }
 
   // データの保存
-  saveItem = async(counter) => {
+  saveItem = async(counter, flg) => {
     try {
-      await AsyncStorage.setItem("tno", counter);
+      if (flg == 0) {
+        await AsyncStorage.setItem("tno", counter);
+      } else {
+        await AsyncStorage.setItem("token", counter);
+      }
     } catch (e) {
       console.log(e)
     }
   }
   
   render() {
-    console.log("kljlk1");
     return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
@@ -79,10 +80,12 @@ const styles = StyleSheet.create({
 });
 
 function login_action () {
+  //下記urlにトークンも追加して現在登録されていないか確かめる
   const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=CHECK_TNO&ID="+id+"&PASS="+pass;
   axios.get(baseURL).then((response) => {
     if (response.data.tno) {
-      this_.saveItem(response.data.tno);
+      this_.saveItem(response.data.tno, 0);
+      this_.saveItem(token, 1);
       navigation_.navigate('Home');
     } else {
       //エラー表示
@@ -94,6 +97,7 @@ function login_action () {
 
 function DetailsScreen({ navigation }) {
   navigation_ = navigation;
+  [token, setToken] = useState('');
   [id, setId] = useState('');
   [pass, setPass] = useState('');
   [error, setError] = useState('');
@@ -106,6 +110,14 @@ function DetailsScreen({ navigation }) {
       <Text style={styles.text}>
         { error }
       </Text>
+      <Text style={styles.text}>
+        任意のIDを英数字で入力してください
+      </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={token_ => setToken(token_)}
+        placeholder="任意のID"
+      />
       <TextInput
         style={styles.input}
         onChangeText={id_ => setId(id_)}

@@ -8,17 +8,20 @@ import {
   View,
   NativeModules,
   NativeEventEmitter,
-  Modal
+  Modal,
+  AsyncStorage
 } from 'react-native';
 import Sound from 'react-native-sound';
 import BleManager from 'react-native-ble-manager';
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
-
+//下記更新URL
+///cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=$recordDirection&record_date=$recordDate&record_finish_date=$recordFinishDate&body_temperature=$lastBodyTemperature"
 let state = 0;
 let state_this;
 let sound_flg = 0;
+let token;
 export default class App extends Component<{}> {
   
   constructor(props) {
@@ -36,7 +39,10 @@ export default class App extends Component<{}> {
       count10: "",
       modalVisible: false,
     };
-    
+
+    // トークン(任意id)取得
+    this.loadItem();
+
     state_this = this;
     this.alerm = new Sound('alert.mp3', Sound.MAIN_BUNDLE, (error) => {
       if (error) {
@@ -422,10 +428,22 @@ export default class App extends Component<{}> {
       });
     });
   }
+  
+  loadItem = async () => {
+    try {
+      const todoString = await AsyncStorage.getItem("tno");
+      token = await AsyncStorage.getItem("token");
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   render() {
     return (
         <View style={styles.container}>
+          <Text style={styles.text}>
+            トークン { token }
+          </Text>
           <Text style={styles.text}>
           NO.1 山田 { this.state.count }
           </Text>
