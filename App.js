@@ -37,11 +37,7 @@ export default class App extends Component<{}> {
   // データの保存
   saveItem = async(counter, flg) => {
     try {
-      if (flg == 0) {
-        await AsyncStorage.setItem("tno", counter);
-      } else {
-        await AsyncStorage.setItem("token", counter);
-      }
+      await AsyncStorage.setItem("tno", counter);
     } catch (e) {
       console.log(e)
     }
@@ -84,8 +80,7 @@ function login_action () {
   const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=CHECK_TNO&ID="+id+"&PASS="+pass;
   axios.get(baseURL).then((response) => {
     if (response.data.tno) {
-      this_.saveItem(response.data.tno, 0);
-      this_.saveItem(token, 1);
+      this_.saveItem(response.data.tno);
       navigation_.navigate('Home');
     } else {
       //エラー表示
@@ -97,7 +92,6 @@ function login_action () {
 
 function DetailsScreen({ navigation }) {
   navigation_ = navigation;
-  [token, setToken] = useState('');
   [id, setId] = useState('');
   [pass, setPass] = useState('');
   [error, setError] = useState('');
@@ -110,14 +104,6 @@ function DetailsScreen({ navigation }) {
       <Text style={styles.text}>
         { error }
       </Text>
-      <Text style={styles.text}>
-        任意のIDを英数字で入力してください
-      </Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={token_ => setToken(token_)}
-        placeholder="任意のID"
-      />
       <TextInput
         style={styles.input}
         onChangeText={id_ => setId(id_)}

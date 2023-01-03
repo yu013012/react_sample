@@ -13,12 +13,13 @@ import {
 } from 'react-native';
 import Sound from 'react-native-sound';
 import BleManager from 'react-native-ble-manager';
+import DeviceInfo from 'react-native-device-info';
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 //下記更新URL
 ///cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=$recordDirection&record_date=$recordDate&record_finish_date=$recordFinishDate&body_temperature=$lastBodyTemperature"
-let state = 0;
+let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;
 let state_this;
 let sound_flg = 0;
 let token;
@@ -40,8 +41,24 @@ export default class App extends Component<{}> {
       modalVisible: false,
     };
 
-    // トークン(任意id)取得
-    this.loadItem();
+    // token取得
+    DeviceInfo.getUniqueId().then((uniqueId) => {
+      token = uniqueId;
+    });
+
+    // 1.5秒ごとにalert実行
+    setInterval(() => {
+      if (alert_flg1 == 1 || alert_flg2 == 1 || alert_flg3 == 1 || alert_flg4 == 1 || alert_flg5 == 1 || alert_flg6 == 1 || alert_flg7 == 1 || alert_flg8 == 1 || alert_flg9 == 1 || alert_flg10 == 1) {
+        //うつ伏せモーダル表示
+        this.setState({modalVisible:true});
+        // うつ伏せアラーム
+        if (sound_flg == 0) {
+          this.alerm.play();
+        }
+      } else {
+        this.setState({modalVisible:false});
+      }
+    }, 1500);
 
     state_this = this;
     this.alerm = new Sound('alert.mp3', Sound.MAIN_BUNDLE, (error) => {
@@ -197,141 +214,162 @@ export default class App extends Component<{}> {
           uuid9 = "F361DD9B-F42D-CCC7-FAC9-F4339B3502E0";
         }
         if (31 <= monthAry[17] && monthAry[17] <= 65) {
-          //うつ伏せモーダル表示
-          this.setState({modalVisible:true});
-          // うつ伏せアラーム
-          if (sound_flg == 0) {
-            this.alerm.play();
-          }
-
           if (peripheral == uuid) {
+            alert_flg2 = 1;
             state_this.setState({
               count2: "↓"
             })
           } else if (peripheral == uuid2) {
+            alert_flg3 = 1;
             state_this.setState({
               count3: "↓"
             })
           } else if (peripheral == uuid3) {
+            alert_flg4 = 1;
             state_this.setState({
               count4: "↓"
             })
           } else if (peripheral == uuid4) {
+            alert_flg5 = 1;
             state_this.setState({
               count5: "↓"
             })
           } else if (peripheral == uuid5) {
+            alert_flg6 = 1;
             state_this.setState({
               count6: "↓"
             })
           } else if (peripheral == uuid6) {
+            alert_flg7 = 1;
             state_this.setState({
               count7: "↓"
             })
           } else if (peripheral == uuid7) {
+            alert_flg8 = 1;
             state_this.setState({
               count8: "↓"
             })
           } else if (peripheral == uuid8) {
+            alert_flg9 = 1;
             state_this.setState({
               count9: "↓"
             })
           } else if (peripheral == uuid9) {
+            alert_flg10 = 1;
             state_this.setState({
               count10: "↓"
             })
           } else {
+            alert_flg1 = 1;
             state_this.setState({
               count: "↓"
             })
           }
         // 仰向けの時(z軸128~223、仰向けMIN191がとれるが時々条件不明で165等が取得できるので128まで見るようにしている)
         } else if (128 <= monthAry[17] && monthAry[17] <= 223) {
-          this.setState({modalVisible:false});
           // ↑
           if (peripheral == uuid) {
+            alert_flg2 = 0;
             state_this.setState({
               count2: "↑"
             })
           } else if (peripheral == uuid2) {
+            alert_flg3 = 0;
             state_this.setState({
               count3: "↑"
             })
           } else if (peripheral == uuid3) {
+            alert_flg4 = 0;
             state_this.setState({
               count4: "↑"
             })
           } else if (peripheral == uuid4) {
+            alert_flg5 = 0;
             state_this.setState({
               count5: "↑"
             })
           } else if (peripheral == uuid5) {
+            alert_flg6 = 0;
             state_this.setState({
               count6: "↑"
             })
           } else if (peripheral == uuid6) {
+            alert_flg7 = 0;
             state_this.setState({
               count7: "↑"
             })
           } else if (peripheral == uuid7) {
+            alert_flg8 = 0;
             state_this.setState({
               count8: "↑"
             })
           } else if (peripheral == uuid8) {
+            alert_flg9 = 0;
             state_this.setState({
               count9: "↑"
             })
           } else if (peripheral == uuid9) {
+            alert_flg10 = 0;
             state_this.setState({
               count10: "↑"
             })
           } else {
+            alert_flg1 = 0;
             state_this.setState({
               count: "↑"
             })
           }
           // 横向きの時(z軸224~255 or 0~30)
         } else if (224 <= monthAry[17] && monthAry[17] <= 255 || 0 <= monthAry[17] && monthAry[17] <= 30) {
-          this.setState({modalVisible:false});
           // 右向き
           if (224 <= monthAry[17] && monthAry[17] <= 255) {
             if (peripheral == uuid) {
+              alert_flg2 = 0;
               state_this.setState({
                 count2: "⇨"
               })
             } else if (peripheral == uuid2) {
+              alert_flg3 = 0;
               state_this.setState({
                 count3: "⇨"
               })
             } else if (peripheral == uuid3) {
+              alert_flg4 = 0;
               state_this.setState({
                 count4: "⇨"
               })
             } else if (peripheral == uuid4) {
+              alert_flg5 = 0;
               state_this.setState({
                 count5: "⇨"
               })
             } else if (peripheral == uuid5) {
+              alert_flg6 = 0;
               state_this.setState({
                 count6: "⇨"
               })
             } else if (peripheral == uuid6) {
+              alert_flg7 = 0;
               state_this.setState({
                 count7: "⇨"
               })
             } else if (peripheral == uuid7) {
+              alert_flg8 = 0;
               state_this.setState({
                 count8: "⇨"
               })
             } else if (peripheral == uuid8) {
+              alert_flg9 = 0;
               state_this.setState({
                 count9: "⇨"
               })
             } else if (peripheral == uuid9) {
+              alert_flg10 = 0;
               state_this.setState({
                 count10: "⇨"
               })
             } else {
+              alert_flg1 = 0;
               state_this.setState({
                 count: "⇨"
               })
@@ -339,87 +377,107 @@ export default class App extends Component<{}> {
           // 左向き
           } else if (0 <= monthAry[17] && monthAry[17] <= 30) {
             if (peripheral == uuid) {
+              alert_flg2 = 0;
               state_this.setState({
                 count2: "⇦"
               })
             } else if (peripheral == uuid2) {
+              alert_flg3 = 0;
               state_this.setState({
                 count3: "⇦"
               })
             } else if (peripheral == uuid3) {
+              alert_flg4 = 0;
               state_this.setState({
                 count4: "⇦"
               })
             } else if (peripheral == uuid4) {
+              alert_flg5 = 0;
               state_this.setState({
                 count5: "⇦"
               })
             } else if (peripheral == uuid5) {
+              alert_flg6 = 0;
               state_this.setState({
                 count6: "⇦"
               })
             } else if (peripheral == uuid6) {
+              alert_flg7 = 0;
               state_this.setState({
                 count7: "⇦"
               })
             } else if (peripheral == uuid7) {
+              alert_flg8 = 0;
               state_this.setState({
                 count8: "⇦"
               })
             } else if (peripheral == uuid8) {
+              alert_flg9 = 0;
               state_this.setState({
                 count9: "⇦"
               })
             } else if (peripheral == uuid9) {
+              alert_flg10 = 0;
               state_this.setState({
                 count10: "⇦"
               })
             } else {
+              alert_flg1 = 0;
               state_this.setState({
                 count: "⇦"
               })
             }
           }
         } else {
-          this.setState({modalVisible:false});
+          
           /* 72 ~ 127 : シェイク判定??*/
           if (peripheral == uuid) {
+            alert_flg2 = 0;
             state_this.setState({
               count2: "↑"
             })
           } else if (peripheral == uuid2) {
+            alert_flg3 = 0;
             state_this.setState({
               count3: "↑"
             })
           } else if (peripheral == uuid3) {
+            alert_flg4 = 0;
             state_this.setState({
               count4: "↑"
             })
           } else if (peripheral == uuid4) {
+            alert_flg5 = 0;
             state_this.setState({
               count5: "↑"
             })
           } else if (peripheral == uuid5) {
+            alert_flg6 = 0;
             state_this.setState({
               count6: "↑"
             })
           } else if (peripheral == uuid6) {
+            alert_flg7 = 0;
             state_this.setState({
               count7: "↑"
             })
           } else if (peripheral == uuid7) {
+            alert_flg8 = 0;
             state_this.setState({
               count8: "↑"
             })
           } else if (peripheral == uuid8) {
+            alert_flg9 = 0;
             state_this.setState({
               count9: "↑"
             })
           } else if (peripheral == uuid9) {
+            alert_flg10 = 0;
             state_this.setState({
               count10: "↑"
             })
           } else {
+            alert_flg1 = 0;
             state_this.setState({
               count: "↑"
             })
@@ -429,15 +487,6 @@ export default class App extends Component<{}> {
     });
   }
   
-  loadItem = async () => {
-    try {
-      const todoString = await AsyncStorage.getItem("tno");
-      token = await AsyncStorage.getItem("token");
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
   render() {
     return (
         <View style={styles.container}>
@@ -492,7 +541,6 @@ function blue_connect(uuid) {
   })
   .catch((error) => {
     blue_connect(uuid)
-    console.log("接続エラー");
   });
 }
 
@@ -506,11 +554,9 @@ function blue_write(uuid, ios_uuid) {
       [0x28, 0x43, 0x44, 0x02, 0x03, 0x29]
   )
   .then((data) => {
-    console.log("書き込みエラー"+data);
   })
   .catch((error) => {
     blue_write(uuid, ios_uuid)
-    console.log("書き込みエラーss"+error);
   });
 }
 
@@ -524,7 +570,6 @@ function blue_notification(uuid, ios_uuid) {
   })
   .catch((error) => {
     blue_notification(uuid)
-    console.log("通知エラー");
   });
 }
 
