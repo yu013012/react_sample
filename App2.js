@@ -14,12 +14,15 @@ import {
 import Sound from 'react-native-sound';
 import BleManager from 'react-native-ble-manager';
 import DeviceInfo from 'react-native-device-info';
+import axios from "axios";
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 //下記更新URL
 ///cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=$recordDirection&record_date=$recordDate&record_finish_date=$recordFinishDate&body_temperature=$lastBodyTemperature"
 let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;
+let uuid1, uuid2, uuid3, uuid4, uuid5, uuid6, uuid7, uuid8, uuid9, uuid10;
+let uuid1_ios, uuid2_ios, uuid3_ios, uuid4_ios, uuid5_ios, uuid6_ios, uuid7_ios, uuid8_ios, uuid9_ios, uuid10_ios;
 let state_this;
 let sound_flg = 0;
 let token;
@@ -44,7 +47,10 @@ export default class App extends Component<{}> {
     // token取得
     DeviceInfo.getUniqueId().then((uniqueId) => {
       token = uniqueId;
+      console.log(token);
     });
+
+    this.loadItem();
 
     // 1.5秒ごとにalert実行
     setInterval(() => {
@@ -76,16 +82,12 @@ export default class App extends Component<{}> {
         bleManagerEmitter.addListener(
           'BleManagerDiscoverPeripheral',
           (args) => {
-            var uuid = "4C:02:2E:7E:56:A8";
-            if (Platform.OS == 'ios') {
-              uuid = "93B61CDF-30D0-F7F0-9D3A-300977E28648";
+            if (args.id == uuid1) {
+              blue_connect(uuid1)
+              blue_write(uuid1, uuid1_ios)
+              blue_notification(uuid1, uuid1_ios)
             }
-            if (args.id == uuid) {
-              blue_connect(uuid)
-              blue_write(uuid, "93B61CDF-30D0-F7F0-9D3A-300977E28648")
-              blue_notification(uuid, "93B61CDF-30D0-F7F0-9D3A-300977E28648")
-            }
-            uuid = "4C:02:2E:7E:4F:12";
+            var uuid = "4C:02:2E:7E:4F:12";
             if (Platform.OS == 'ios') {
               uuid = "ED2E8A6E-E9B2-6C15-8BE9-1193AA4CECAD";
             }
@@ -533,6 +535,58 @@ export default class App extends Component<{}> {
         </View>
     );
   }
+
+  // データの存在を確認後blue開始
+  loadItem = async () => {
+    try {
+      const tno = await AsyncStorage.getItem("tno");
+      if(tno) {
+        const baseURL = "https://www.cloudtest2.pw/cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO="+tno+"&token="+token;
+        axios.get(baseURL).then((response) => {
+          if (response) {
+            if (Platform.OS == 'ios') {
+              uuid1 = response.data.uuid1;
+              uuid2 = response.data.uuid2;
+              uuid3 = response.data.uuid3;
+              uuid4 = response.data.uuid4;
+              uuid5 = response.data.uuid5;
+              uuid6 = response.data.uuid6;
+              uuid7 = response.data.uuid7;
+              uuid8 = response.data.uuid8;
+              uuid9 = response.data.uuid9;
+              uuid10 = response.data.uuid10;
+            } else {
+              uuid1 = response.data.mac1;
+              uuid2 = response.data.mac2;
+              uuid3 = response.data.mac3;
+              uuid4 = response.data.mac4;
+              uuid5 = response.data.mac5;
+              uuid6 = response.data.mac6;
+              uuid7 = response.data.mac7;
+              uuid8 = response.data.mac8;
+              uuid9 = response.data.mac9;
+              uuid10 = response.data.mac10;
+            }
+            uuid1_ios = response.data.uuid1;
+            uuid2_ios = response.data.uuid2;
+            uuid3_ios = response.data.uuid3;
+            uuid4_ios = response.data.uuid4;
+            uuid5_ios = response.data.uuid5;
+            uuid6_ios = response.data.uuid6;
+            uuid7_ios = response.data.uuid7;
+            uuid8_ios = response.data.uuid8;
+            uuid9_ios = response.data.uuid9;
+            uuid10_ios = response.data.uuid10;
+          } else {
+            //エラー表示
+            console.log("エラー表示");
+          }
+        });
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
 }
 
 function blue_connect(uuid) {
@@ -541,6 +595,20 @@ function blue_connect(uuid) {
   })
   .catch((error) => {
     blue_connect(uuid)
+  });
+}
+
+function login_action () {
+  //下記urlにトークンも追加して現在登録されていないか確かめる
+  const baseURL = "https://www.cloudtest2.pw/cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO=10594&token=sssss";
+  axios.get(baseURL).then((response) => {
+    if (response) {
+      console.log(response.data);
+    } else {
+      //エラー表示
+      console.log("エラー表示");
+      setError("正しい情報を入力してください")
+    }
   });
 }
 
