@@ -26,8 +26,6 @@ import axios from "axios";
 
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
-//下記更新URL
-///cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=$recordDirection&record_date=$recordDate&record_finish_date=$recordFinishDate&body_temperature=$lastBodyTemperature"
 
 // alertを出すか判断するフラグ
 let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;
@@ -35,6 +33,12 @@ let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, aler
 let uuid1, uuid2, uuid3, uuid4, uuid5, uuid6, uuid7, uuid8, uuid9, uuid10;
 // サーバーのレスポンスから名前を格納
 let name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
+// サーバーのレスポンスからmnoを格納
+let mno1, mno2, mno3, mno4, mno5, mno6, mno7, mno8, mno9, mno10;
+// サーバーのレスポンスから担当を格納
+let tantou1, tantou2, tantou3, tantou4, tantou5, tantou6, tantou7, tantou8, tantou9, tantou10;
+// サーバーのレスポンスからカテゴリを格納
+let category1, category2, category3, category4, category5, category6, category7, category8, category9, category10;
 // サーバーのレスポンスからuuidを格納(ios用)
 let uuid1_ios, uuid2_ios, uuid3_ios, uuid4_ios, uuid5_ios, uuid6_ios, uuid7_ios, uuid8_ios, uuid9_ios, uuid10_ios;
 // 午睡開始ボタンを押したかどうか判断するフラグ
@@ -143,48 +147,74 @@ export default class App extends Component<{}> {
     // 30秒ごとにデータ送信を実行
     setInterval(() => {
       // データ送信
-      var minute = new Date().getMinutes();
+      var date = new Date();
+      var date_str = String(date.getFullYear())
+              + String(('0' + (date.getMonth() + 1)).slice(-2))
+              + String(('0' + date.getDate()).slice(-2))
+              + String(('0' + date.getHours()).slice(-2))
+              + String(('0' + date.getMinutes()).slice(-2))
+              + String(('0' + date.getSeconds()).slice(-2));
+      var minute = date.getMinutes();
       // 5分おきに送る
       if (minute % 5 == 0) {
         if (start_flg1 == 1 && send_flg1 == 0) {
           send_flg1 = 1;
-          console.log(minute);
+          send_data(1);
+          console.log(date_str);
         }
 
         if (start_flg2 == 1 && send_flg2 == 0) {
           send_flg2 = 1;
+          send_data(2);
+          console.log(date_str);
         }
 
         if (start_flg3 == 1 && send_flg3 == 0) {
           send_flg3 = 1;
+          send_data(3);
+          console.log(date_str);
         }
 
         if (start_flg4 == 1 && send_flg4 == 0) {
           send_flg4 = 1;
+          send_data(4);
+          console.log(date_str);
         }
 
         if (start_flg5 == 1 && send_flg5 == 0) {
           send_flg5 = 1;
+          send_data(5);
+          console.log(date_str);
         }
 
         if (start_flg6 == 1 && send_flg6 == 0) {
           send_flg6 = 1;
+          send_data(6);
+          console.log(date_str);
         }
 
         if (start_flg7 == 1 && send_flg7 == 0) {
           send_flg7 = 1;
+          send_data(7);
+          console.log(date_str);
         }
 
         if (start_flg8 == 1 && send_flg8 == 0) {
           send_flg8 = 1;
+          send_data(8);
+          console.log(date_str);
         }
 
         if (start_flg9 == 1 && send_flg9 == 0) {
           send_flg9 = 1;
+          send_data(9);
+          console.log(date_str);
         }
 
         if (start_flg10 == 1 && send_flg10 == 0) {
           send_flg10 = 1;
+          send_data(10);
+          console.log(date_str);
         }
       
       // 5分じゃない場合はリセット
@@ -952,6 +982,14 @@ function blue_notification(uuid) {
   .catch((error) => {
     blue_notification(uuid)
   });
+}
+
+function send_data (num) {
+  //const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=s&record_date=20221010101110&category_react=2342333&tantou_react=田中";
+  //axios.get(baseURL).then((response) => {
+  //  console.log(response);
+  //});
+  console.log(num + "を送りました");
 }
 
 const styles = StyleSheet.create({
