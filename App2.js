@@ -1,3 +1,9 @@
+//ios,androidで色の付け方が違う
+//android: button color
+//ios: view backgroundcolor
+
+//stateにはこれがいる(変更可能にする)
+//this.blue_notification = this.blue_notification.bind(this);
 import React, { Component, useState } from 'react';
 import {
   Platform,
@@ -10,7 +16,8 @@ import {
   NativeEventEmitter,
   Modal,
   ScrollView,
-  AsyncStorage
+  AsyncStorage,
+  LogBox
 } from 'react-native';
 import Sound from 'react-native-sound';
 import BleManager from 'react-native-ble-manager';
@@ -21,10 +28,16 @@ const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 //下記更新URL
 ///cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=$recordDirection&record_date=$recordDate&record_finish_date=$recordFinishDate&body_temperature=$lastBodyTemperature"
+
+// alertを出すか判断するフラグ
 let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;
+// サーバーのレスポンスからuuid or macaddressを格納
 let uuid1, uuid2, uuid3, uuid4, uuid5, uuid6, uuid7, uuid8, uuid9, uuid10;
+// サーバーのレスポンスから名前を格納
 let name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
+// サーバーのレスポンスからuuidを格納(ios用)
 let uuid1_ios, uuid2_ios, uuid3_ios, uuid4_ios, uuid5_ios, uuid6_ios, uuid7_ios, uuid8_ios, uuid9_ios, uuid10_ios;
+// 午睡開始ボタンを押したかどうか判断するフラグ
 let start_flg1 = 0; 
 let start_flg2 = 0;
 let start_flg3 = 0;
@@ -35,14 +48,34 @@ let start_flg7 = 0;
 let start_flg8 = 0;
 let start_flg9 = 0;
 let start_flg10 = 0;
+
+// 午睡開始ボタンを押したかどうか判断するフラグ
+let send_flg1 = 0; 
+let send_flg2 = 0;
+let send_flg3 = 0;
+let send_flg4 = 0;
+let send_flg5 = 0;
+let send_flg6 = 0;
+let send_flg7 = 0;
+let send_flg8 = 0;
+let send_flg9 = 0;
+let send_flg10 = 0;
+
+// 他メソッドでもthisを使えるように下記に格納
 let state_this;
+// 音源を読み込みできたかどうか判断するフラグ
 let sound_flg = 0;
+// 端末の固有トークン格納
 let token;
+// warning削除
+LogBox.ignoreAllLogs();
+
 export default class App extends Component<{}> {
   
   constructor(props) {
     super(props);
     this.state = {
+      // blueから受け取った向き
       direction1: "",
       direction2: "",
       direction3: "",
@@ -53,7 +86,8 @@ export default class App extends Component<{}> {
       direction8: "",
       direction9: "",
       direction10: "",
-
+      
+      // ボタンのテキスト
       button1: "午睡チェック開始",
       button2: "午睡チェック開始",
       button3: "午睡チェック開始",
@@ -65,6 +99,7 @@ export default class App extends Component<{}> {
       button9: "午睡チェック開始",
       button10: "午睡チェック開始",
 
+      // ボタンの背景色
       b_color1: "green",
       b_color2: "green",
       b_color3: "green",
@@ -75,6 +110,8 @@ export default class App extends Component<{}> {
       b_color8: "green",
       b_color9: "green",
       b_color10: "green",
+      
+      // modal表示フラグ
       modalVisible: false,
     };
 
@@ -88,8 +125,9 @@ export default class App extends Component<{}> {
       this.loadItem();
     }, 1000);
 
-    // 1.5秒ごとにalert実行
+    // 1.5秒ごとにalertを実行
     setInterval(() => {
+      // alert
       if (alert_flg1 == 1 || alert_flg2 == 1 || alert_flg3 == 1 || alert_flg4 == 1 || alert_flg5 == 1 || alert_flg6 == 1 || alert_flg7 == 1 || alert_flg8 == 1 || alert_flg9 == 1 || alert_flg10 == 1) {
         //うつ伏せモーダル表示
         this.setState({modalVisible:true});
@@ -102,28 +140,91 @@ export default class App extends Component<{}> {
       }
     }, 1500);
 
+    // 30秒ごとにデータ送信を実行
+    setInterval(() => {
+      // データ送信
+      var minute = new Date().getMinutes();
+      // 5分おきに送る
+      if (minute % 5 == 0) {
+        if (start_flg1 == 1 && send_flg1 == 0) {
+          send_flg1 = 1;
+          console.log(minute);
+        }
+
+        if (start_flg2 == 1 && send_flg2 == 0) {
+          send_flg2 = 1;
+        }
+
+        if (start_flg3 == 1 && send_flg3 == 0) {
+          send_flg3 = 1;
+        }
+
+        if (start_flg4 == 1 && send_flg4 == 0) {
+          send_flg4 = 1;
+        }
+
+        if (start_flg5 == 1 && send_flg5 == 0) {
+          send_flg5 = 1;
+        }
+
+        if (start_flg6 == 1 && send_flg6 == 0) {
+          send_flg6 = 1;
+        }
+
+        if (start_flg7 == 1 && send_flg7 == 0) {
+          send_flg7 = 1;
+        }
+
+        if (start_flg8 == 1 && send_flg8 == 0) {
+          send_flg8 = 1;
+        }
+
+        if (start_flg9 == 1 && send_flg9 == 0) {
+          send_flg9 = 1;
+        }
+
+        if (start_flg10 == 1 && send_flg10 == 0) {
+          send_flg10 = 1;
+        }
+      
+      // 5分じゃない場合はリセット
+      } else {
+        send_flg1 = 0;
+        send_flg2 = 0;
+        send_flg3 = 0;
+        send_flg4 = 0;
+        send_flg5 = 0;
+        send_flg6 = 0;
+        send_flg7 = 0;
+        send_flg8 = 0;
+        send_flg9 = 0;
+        send_flg10 = 0;
+      }
+    }, 30000);
+
     state_this = this;
+
+    // 音源読み込み
     this.alerm = new Sound('alert.mp3', Sound.MAIN_BUNDLE, (error) => {
       if (error) {
         sound_flg = 1;
       }
     });
-    // stateにはこれがいる(変更可能にする)
-    //this.blue_notification = this.blue_notification.bind(this);
+    
     // 開始
     BleManager.start({ showAlert: false }).then(() => {
       // 1時間スキャンする
       BleManager.scan([], 18000, true).then(() => {
-        // スキャンがうまくできれば
+        // スキャンすると下記イベントが呼ばれる
         bleManagerEmitter.addListener(
           'BleManagerDiscoverPeripheral',
           (args) => {
+            // 設定されたuuidであれば接続して情報を受け取る
             if (args.id == uuid1) {
               blue_connect(uuid1)
               blue_write(uuid1, uuid1_ios)
               blue_notification(uuid1)
             }
-            
             if (args.id == uuid2) {
               blue_connect(uuid2)
               blue_write(uuid2, uuid2_ios)
@@ -172,15 +273,17 @@ export default class App extends Component<{}> {
           }
         );
       }).catch((error) => {
-        console.log();
+        console.log("error");
       });
-      // 通知取得
+
+      // 定期的に通知を取得
       bleManagerEmitter.addListener(
       "BleManagerDidUpdateValueForCharacteristic",
       ({ value, peripheral, characteristic, service }) => {
-        let test = String(value);
-        let monthAry = test.split(',');
-        if (31 <= monthAry[17] && monthAry[17] <= 65) {
+        let data = String(value);
+        let dataArray = data.split(',');
+        // うつ伏せ
+        if (31 <= dataArray[17] && dataArray[17] <= 65) {
           if (peripheral == uuid1) {
             alert_flg1 = 1;
             state_this.setState({
@@ -232,9 +335,9 @@ export default class App extends Component<{}> {
               direction10: "↓"
             })
           }
-        // 仰向けの時(z軸128~223、仰向けMIN191がとれるが時々条件不明で165等が取得できるので128まで見るようにしている)
-        } else if (128 <= monthAry[17] && monthAry[17] <= 223) {
-          // ↑
+
+        // 仰向け
+        } else if (128 <= dataArray[17] && dataArray[17] <= 223) {
           if (peripheral == uuid1) {
             alert_flg1 = 0;
             state_this.setState({
@@ -286,10 +389,12 @@ export default class App extends Component<{}> {
               direction10: "↑"
             })
           }
-          // 横向きの時(z軸224~255 or 0~30)
-        } else if (224 <= monthAry[17] && monthAry[17] <= 255 || 0 <= monthAry[17] && monthAry[17] <= 30) {
+
+        // 横向きの時
+        } else if (224 <= dataArray[17] && dataArray[17] <= 255 || 0 <= dataArray[17] && dataArray[17] <= 30) {
+          
           // 右向き
-          if (224 <= monthAry[17] && monthAry[17] <= 255) {
+          if (224 <= dataArray[17] && dataArray[17] <= 255) {
             if (peripheral == uuid1) {
               alert_flg1 = 0;
               state_this.setState({
@@ -341,8 +446,9 @@ export default class App extends Component<{}> {
                 direction10: "⇨"
               })
             }
-          // 左向き
-          } else if (0 <= monthAry[17] && monthAry[17] <= 30) {
+          
+            // 左向き
+          } else if (0 <= dataArray[17] && dataArray[17] <= 30) {
             if (peripheral == uuid1) {
               alert_flg1 = 0;
               state_this.setState({
@@ -396,8 +502,7 @@ export default class App extends Component<{}> {
             }
           }
         } else {
-          
-          /* 72 ~ 127 : シェイク判定??*/
+          /* 72 ~ 127 : シェイク判定*/
           if (peripheral == uuid1) {
             alert_flg1 = 0;
             state_this.setState({
@@ -454,6 +559,7 @@ export default class App extends Component<{}> {
     });
   }
 
+  // start1~start10 午睡開始ボタンを押したときに呼ばれる
   start1() {
     if (start_flg1 == 1) {
       start_flg1 = 0;
@@ -628,7 +734,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start1}
                 title={ this.state.button1 }
-                color="#000004"
+                color="this.state.b_color1"
               />
             </View>
             <Text style={styles.text}>
@@ -639,7 +745,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start2}
                 title={ this.state.button2 }
-                color="#000004"
+                color="this.state.b_color2"
               />
             </View>
             <Text style={styles.text}>
@@ -650,7 +756,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start3}
                 title={ this.state.button3 }
-                color="#000004"
+                color="this.state.b_color3"
               />
             </View>
             <Text style={styles.text}>
@@ -661,7 +767,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start4}
                 title={ this.state.button4 }
-                color="#000004"
+                color="this.state.b_color4"
               />
             </View>
             <Text style={styles.text}>
@@ -672,7 +778,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start5}
                 title={ this.state.button5 }
-                color="#000004"
+                color="this.state.b_color5"
               />
             </View>
             <Text style={styles.text}>
@@ -683,7 +789,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start6}
                 title={ this.state.button6 }
-                color="#000004"
+                color="this.state.b_color6"
               />
             </View>
             <Text style={styles.text}>
@@ -694,7 +800,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start7}
                 title={ this.state.button7 }
-                color="#000004"
+                color="this.state.b_color7"
               />
             </View>
             <Text style={styles.text}>
@@ -705,7 +811,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start8}
                 title={ this.state.button8 }
-                color="#000004"
+                color="this.state.b_color8"
               />
             </View>
             <Text style={styles.text}>
@@ -716,7 +822,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start9}
                 title={ this.state.button9 }
-                color="#000004"
+                color="this.state.b_color9"
               />
             </View>
             <Text style={styles.text}>
@@ -727,7 +833,7 @@ export default class App extends Component<{}> {
               <Button
                 onPress={this.start10}
                 title={ this.state.button10 }
-                color="#000004"
+                color="this.state.b_color10"
               />
             </View>
             <Text style={styles.text}>

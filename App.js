@@ -1,21 +1,27 @@
 import React, { Component, useState, useEffect } from 'react';
-import {StyleSheet, View, Text, Button, TextInput, SafeAreaView, AsyncStorage} from 'react-native';
+import {StyleSheet, View, Text, Button, TextInput, SafeAreaView, AsyncStorage, LogBox} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import App2 from './App2';
 import axios from "axios";
 import Storage from 'react-native-storage';
 
-let this_;
+// 他メソッドで使うためthisとnavigationを下記に格納
+let this_, navigation_;
+// ページ遷移用
 const Stack = createStackNavigator()
-let navigation_;
+// 他メソッドで使うためstateを宣言
 let id, setId, pass, setPass, error, setError;
+// warning削除
+LogBox.ignoreAllLogs();
 
 export default class App extends Component<{}> {
   
   constructor(props) {
     super(props);
     this_ = this;
+
+    //render後に処理を行うためタイマーをセット
     setTimeout(() => {
       // データの存在を確認
       this_.loadItem();
@@ -25,8 +31,8 @@ export default class App extends Component<{}> {
   // データの存在を確認、存在すればページ遷移
   loadItem = async () => {
     try {
-      const todoString = await AsyncStorage.getItem("tno");
-      if(todoString) {
+      const tno = await AsyncStorage.getItem("tno");
+      if(tno) {
         navigation_.navigate('Home');
       }
     } catch (e) {
@@ -35,11 +41,11 @@ export default class App extends Component<{}> {
   }
 
   // データの保存
-  saveItem = async(counter, flg) => {
+  saveItem = async(tno) => {
     try {
-      await AsyncStorage.setItem("tno", counter);
+      await AsyncStorage.setItem("tno", tno);
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   }
   
@@ -86,7 +92,6 @@ const styles = StyleSheet.create({
 });
 
 function login_action () {
-  //下記urlにトークンも追加して現在登録されていないか確かめる
   const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=CHECK_TNO&ID="+id+"&PASS="+pass;
   axios.get(baseURL).then((response) => {
     if (response.data.tno) {
@@ -95,7 +100,6 @@ function login_action () {
     } else {
       //エラー表示
       console.log("エラー表示");
-      setError("正しい情報を入力してください")
     }
   });
 }
