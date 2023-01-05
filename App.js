@@ -69,9 +69,19 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+    width: '90%',
   },
   container: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  text: {
+    fontSize: 25,
+  },
+  error: {
+    fontSize: 18,
+    color: "red",
   },
 });
 
@@ -97,11 +107,11 @@ function DetailsScreen({ navigation }) {
   [error, setError] = useState('');
   
   return (
-    <SafeAreaView>
+    <View style={styles.container}>
       <Text style={styles.text}>
         { "ログイン画面" }
       </Text>
-      <Text style={styles.text}>
+      <Text style={styles.error}>
         { error }
       </Text>
       <TextInput
@@ -120,6 +130,6 @@ function DetailsScreen({ navigation }) {
           login_action
         }
       />
-    </SafeAreaView>
+    </View>
   )
 }

@@ -25,6 +25,16 @@ let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, aler
 let uuid1, uuid2, uuid3, uuid4, uuid5, uuid6, uuid7, uuid8, uuid9, uuid10;
 let name1, name2, name3, name4, name5, name6, name7, name8, name9, name10;
 let uuid1_ios, uuid2_ios, uuid3_ios, uuid4_ios, uuid5_ios, uuid6_ios, uuid7_ios, uuid8_ios, uuid9_ios, uuid10_ios;
+let start_flg1 = 0; 
+let start_flg2 = 0;
+let start_flg3 = 0;
+let start_flg4 = 0;
+let start_flg5 = 0;
+let start_flg6 = 0;
+let start_flg7 = 0;
+let start_flg8 = 0;
+let start_flg9 = 0;
+let start_flg10 = 0;
 let state_this;
 let sound_flg = 0;
 let token;
@@ -33,27 +43,50 @@ export default class App extends Component<{}> {
   constructor(props) {
     super(props);
     this.state = {
-      count: "",
-      count2: "",
-      count3: "",
-      count4: "",
-      count5: "",
-      count6: "",
-      count7: "",
-      count8: "",
-      count9: "",
-      count10: "",
+      direction1: "",
+      direction2: "",
+      direction3: "",
+      direction4: "",
+      direction5: "",
+      direction6: "",
+      direction7: "",
+      direction8: "",
+      direction9: "",
+      direction10: "",
+
+      button1: "午睡チェック開始",
+      button2: "午睡チェック開始",
+      button3: "午睡チェック開始",
+      button4: "午睡チェック開始",
+      button5: "午睡チェック開始",
+      button6: "午睡チェック開始",
+      button7: "午睡チェック開始",
+      button8: "午睡チェック開始",
+      button9: "午睡チェック開始",
+      button10: "午睡チェック開始",
+
+      b_color1: "green",
+      b_color2: "green",
+      b_color3: "green",
+      b_color4: "green",
+      b_color5: "green",
+      b_color6: "green",
+      b_color7: "green",
+      b_color8: "green",
+      b_color9: "green",
+      b_color10: "green",
       modalVisible: false,
     };
 
     // token取得
     DeviceInfo.getUniqueId().then((uniqueId) => {
       token = uniqueId;
-      console.log(token);
     });
 
     // センサーデータ読み込み
-    this.loadItem();
+    setTimeout(() => {
+      this.loadItem();
+    }, 1000);
 
     // 1.5秒ごとにalert実行
     setInterval(() => {
@@ -149,108 +182,108 @@ export default class App extends Component<{}> {
         let monthAry = test.split(',');
         if (31 <= monthAry[17] && monthAry[17] <= 65) {
           if (peripheral == uuid1) {
-            alert_flg2 = 1;
-            state_this.setState({
-              count2: "↓"
-            })
-          } else if (peripheral == uuid2) {
-            alert_flg3 = 1;
-            state_this.setState({
-              count3: "↓"
-            })
-          } else if (peripheral == uuid3) {
-            alert_flg4 = 1;
-            state_this.setState({
-              count4: "↓"
-            })
-          } else if (peripheral == uuid4) {
-            alert_flg5 = 1;
-            state_this.setState({
-              count5: "↓"
-            })
-          } else if (peripheral == uuid5) {
-            alert_flg6 = 1;
-            state_this.setState({
-              count6: "↓"
-            })
-          } else if (peripheral == uuid6) {
-            alert_flg7 = 1;
-            state_this.setState({
-              count7: "↓"
-            })
-          } else if (peripheral == uuid7) {
-            alert_flg8 = 1;
-            state_this.setState({
-              count8: "↓"
-            })
-          } else if (peripheral == uuid8) {
-            alert_flg9 = 1;
-            state_this.setState({
-              count9: "↓"
-            })
-          } else if (peripheral == uuid9) {
-            alert_flg10 = 1;
-            state_this.setState({
-              count10: "↓"
-            })
-          } else {
             alert_flg1 = 1;
             state_this.setState({
-              count: "↓"
+              direction1: "↓"
+            })
+          } else if (peripheral == uuid2) {
+            alert_flg2 = 1;
+            state_this.setState({
+              direction2: "↓"
+            })
+          } else if (peripheral == uuid3) {
+            alert_flg3 = 1;
+            state_this.setState({
+              direction3: "↓"
+            })
+          } else if (peripheral == uuid4) {
+            alert_flg4 = 1;
+            state_this.setState({
+              direction4: "↓"
+            })
+          } else if (peripheral == uuid5) {
+            alert_flg5 = 1;
+            state_this.setState({
+              direction5: "↓"
+            })
+          } else if (peripheral == uuid6) {
+            alert_flg6 = 1;
+            state_this.setState({
+              direction6: "↓"
+            })
+          } else if (peripheral == uuid7) {
+            alert_flg7 = 1;
+            state_this.setState({
+              direction7: "↓"
+            })
+          } else if (peripheral == uuid8) {
+            alert_flg8 = 1;
+            state_this.setState({
+              direction8: "↓"
+            })
+          } else if (peripheral == uuid9) {
+            alert_flg9 = 1;
+            state_this.setState({
+              direction9: "↓"
+            })
+          } else {
+            alert_flg10 = 1;
+            state_this.setState({
+              direction10: "↓"
             })
           }
         // 仰向けの時(z軸128~223、仰向けMIN191がとれるが時々条件不明で165等が取得できるので128まで見るようにしている)
         } else if (128 <= monthAry[17] && monthAry[17] <= 223) {
           // ↑
           if (peripheral == uuid1) {
-            alert_flg2 = 0;
-            state_this.setState({
-              count2: "↑"
-            })
-          } else if (peripheral == uuid2) {
-            alert_flg3 = 0;
-            state_this.setState({
-              count3: "↑"
-            })
-          } else if (peripheral == uuid3) {
-            alert_flg4 = 0;
-            state_this.setState({
-              count4: "↑"
-            })
-          } else if (peripheral == uuid4) {
-            alert_flg5 = 0;
-            state_this.setState({
-              count5: "↑"
-            })
-          } else if (peripheral == uuid5) {
-            alert_flg6 = 0;
-            state_this.setState({
-              count6: "↑"
-            })
-          } else if (peripheral == uuid6) {
-            alert_flg7 = 0;
-            state_this.setState({
-              count7: "↑"
-            })
-          } else if (peripheral == uuid7) {
-            alert_flg8 = 0;
-            state_this.setState({
-              count8: "↑"
-            })
-          } else if (peripheral == uuid8) {
-            alert_flg9 = 0;
-            state_this.setState({
-              count9: "↑"
-            })
-          } else if (peripheral == uuid9) {
-            alert_flg10 = 0;
-            state_this.setState({
-              count10: "↑"
-            })
-          } else {
             alert_flg1 = 0;
             state_this.setState({
-              count: "↑"
+              direction1: "↑"
+            })
+          } else if (peripheral == uuid2) {
+            alert_flg2 = 0;
+            state_this.setState({
+              direction2: "↑"
+            })
+          } else if (peripheral == uuid3) {
+            alert_flg3 = 0;
+            state_this.setState({
+              direction3: "↑"
+            })
+          } else if (peripheral == uuid4) {
+            alert_flg4 = 0;
+            state_this.setState({
+              direction4: "↑"
+            })
+          } else if (peripheral == uuid5) {
+            alert_flg5 = 0;
+            state_this.setState({
+              direction5: "↑"
+            })
+          } else if (peripheral == uuid6) {
+            alert_flg6 = 0;
+            state_this.setState({
+              direction6: "↑"
+            })
+          } else if (peripheral == uuid7) {
+            alert_flg7 = 0;
+            state_this.setState({
+              direction7: "↑"
+            })
+          } else if (peripheral == uuid8) {
+            alert_flg8 = 0;
+            state_this.setState({
+              direction8: "↑"
+            })
+          } else if (peripheral == uuid9) {
+            alert_flg9 = 0;
+            state_this.setState({
+              direction9: "↑"
+            })
+          } else {
+            alert_flg10 = 0;
+            state_this.setState({
+              direction10: "↑"
             })
           }
           // 横向きの時(z軸224~255 or 0~30)
@@ -258,107 +291,107 @@ export default class App extends Component<{}> {
           // 右向き
           if (224 <= monthAry[17] && monthAry[17] <= 255) {
             if (peripheral == uuid1) {
-              alert_flg2 = 0;
-              state_this.setState({
-                count2: "⇨"
-              })
-            } else if (peripheral == uuid2) {
-              alert_flg3 = 0;
-              state_this.setState({
-                count3: "⇨"
-              })
-            } else if (peripheral == uuid3) {
-              alert_flg4 = 0;
-              state_this.setState({
-                count4: "⇨"
-              })
-            } else if (peripheral == uuid4) {
-              alert_flg5 = 0;
-              state_this.setState({
-                count5: "⇨"
-              })
-            } else if (peripheral == uuid5) {
-              alert_flg6 = 0;
-              state_this.setState({
-                count6: "⇨"
-              })
-            } else if (peripheral == uuid6) {
-              alert_flg7 = 0;
-              state_this.setState({
-                count7: "⇨"
-              })
-            } else if (peripheral == uuid7) {
-              alert_flg8 = 0;
-              state_this.setState({
-                count8: "⇨"
-              })
-            } else if (peripheral == uuid8) {
-              alert_flg9 = 0;
-              state_this.setState({
-                count9: "⇨"
-              })
-            } else if (peripheral == uuid9) {
-              alert_flg10 = 0;
-              state_this.setState({
-                count10: "⇨"
-              })
-            } else {
               alert_flg1 = 0;
               state_this.setState({
-                count: "⇨"
+                direction1: "⇨"
+              })
+            } else if (peripheral == uuid2) {
+              alert_flg2 = 0;
+              state_this.setState({
+                direction2: "⇨"
+              })
+            } else if (peripheral == uuid3) {
+              alert_flg3 = 0;
+              state_this.setState({
+                direction3: "⇨"
+              })
+            } else if (peripheral == uuid4) {
+              alert_flg4 = 0;
+              state_this.setState({
+                direction4: "⇨"
+              })
+            } else if (peripheral == uuid5) {
+              alert_flg5 = 0;
+              state_this.setState({
+                direction5: "⇨"
+              })
+            } else if (peripheral == uuid6) {
+              alert_flg6 = 0;
+              state_this.setState({
+                direction6: "⇨"
+              })
+            } else if (peripheral == uuid7) {
+              alert_flg7 = 0;
+              state_this.setState({
+                direction7: "⇨"
+              })
+            } else if (peripheral == uuid8) {
+              alert_flg8 = 0;
+              state_this.setState({
+                direction8: "⇨"
+              })
+            } else if (peripheral == uuid9) {
+              alert_flg9 = 0;
+              state_this.setState({
+                direction9: "⇨"
+              })
+            } else {
+              alert_flg10 = 0;
+              state_this.setState({
+                direction10: "⇨"
               })
             }
           // 左向き
           } else if (0 <= monthAry[17] && monthAry[17] <= 30) {
             if (peripheral == uuid1) {
-              alert_flg2 = 0;
+              alert_flg1 = 0;
               state_this.setState({
-                count2: "⇦"
+                direction1: "⇦"
               })
             } else if (peripheral == uuid2) {
-              alert_flg3 = 0;
+              alert_flg2 = 0;
               state_this.setState({
-                count3: "⇦"
+                direction2: "⇦"
               })
             } else if (peripheral == uuid3) {
-              alert_flg4 = 0;
+              alert_flg3 = 0;
               state_this.setState({
-                count4: "⇦"
+                direction3: "⇦"
               })
             } else if (peripheral == uuid4) {
-              alert_flg5 = 0;
+              alert_flg4 = 0;
               state_this.setState({
-                count5: "⇦"
+                direction4: "⇦"
               })
             } else if (peripheral == uuid5) {
-              alert_flg6 = 0;
+              alert_flg5 = 0;
               state_this.setState({
-                count6: "⇦"
+                direction5: "⇦"
               })
             } else if (peripheral == uuid6) {
-              alert_flg7 = 0;
+              alert_flg6 = 0;
               state_this.setState({
-                count7: "⇦"
+                direction6: "⇦"
               })
             } else if (peripheral == uuid7) {
-              alert_flg8 = 0;
+              alert_flg7 = 0;
               state_this.setState({
-                count8: "⇦"
+                direction7: "⇦"
               })
             } else if (peripheral == uuid8) {
-              alert_flg9 = 0;
+              alert_flg8 = 0;
               state_this.setState({
-                count9: "⇦"
+                direction8: "⇦"
               })
             } else if (peripheral == uuid9) {
-              alert_flg10 = 0;
+              alert_flg9 = 0;
               state_this.setState({
-                count10: "⇦"
+                direction9: "⇦"
               })
             } else {
               alert_flg1 = 0;
               state_this.setState({
-                count: "⇦"
+                direction10: "⇦"
               })
             }
           }
@@ -366,54 +399,54 @@ export default class App extends Component<{}> {
           
           /* 72 ~ 127 : シェイク判定??*/
           if (peripheral == uuid1) {
-            alert_flg2 = 0;
-            state_this.setState({
-              count2: "↑"
-            })
-          } else if (peripheral == uuid2) {
-            alert_flg3 = 0;
-            state_this.setState({
-              count3: "↑"
-            })
-          } else if (peripheral == uuid3) {
-            alert_flg4 = 0;
-            state_this.setState({
-              count4: "↑"
-            })
-          } else if (peripheral == uuid4) {
-            alert_flg5 = 0;
-            state_this.setState({
-              count5: "↑"
-            })
-          } else if (peripheral == uuid5) {
-            alert_flg6 = 0;
-            state_this.setState({
-              count6: "↑"
-            })
-          } else if (peripheral == uuid6) {
-            alert_flg7 = 0;
-            state_this.setState({
-              count7: "↑"
-            })
-          } else if (peripheral == uuid7) {
-            alert_flg8 = 0;
-            state_this.setState({
-              count8: "↑"
-            })
-          } else if (peripheral == uuid8) {
-            alert_flg9 = 0;
-            state_this.setState({
-              count9: "↑"
-            })
-          } else if (peripheral == uuid9) {
-            alert_flg10 = 0;
-            state_this.setState({
-              count10: "↑"
-            })
-          } else {
             alert_flg1 = 0;
             state_this.setState({
-              count: "↑"
+              direction1: "↑"
+            })
+          } else if (peripheral == uuid2) {
+            alert_flg2 = 0;
+            state_this.setState({
+              direction2: "↑"
+            })
+          } else if (peripheral == uuid3) {
+            alert_flg3 = 0;
+            state_this.setState({
+              direction3: "↑"
+            })
+          } else if (peripheral == uuid4) {
+            alert_flg4 = 0;
+            state_this.setState({
+              direction4: "↑"
+            })
+          } else if (peripheral == uuid5) {
+            alert_flg5 = 0;
+            state_this.setState({
+              direction5: "↑"
+            })
+          } else if (peripheral == uuid6) {
+            alert_flg6 = 0;
+            state_this.setState({
+              direction6: "↑"
+            })
+          } else if (peripheral == uuid7) {
+            alert_flg7 = 0;
+            state_this.setState({
+              direction7: "↑"
+            })
+          } else if (peripheral == uuid8) {
+            alert_flg8 = 0;
+            state_this.setState({
+              direction8: "↑"
+            })
+          } else if (peripheral == uuid9) {
+            alert_flg9 = 0;
+            state_this.setState({
+              direction9: "↑"
+            })
+          } else {
+            alert_flg10 = 0;
+            state_this.setState({
+              direction10: "↑"
             })
           }
         }
@@ -422,151 +455,284 @@ export default class App extends Component<{}> {
   }
 
   start1() {
-    console.log("1");
+    if (start_flg1 == 1) {
+      start_flg1 = 0;
+      state_this.setState({
+        button1: "午睡チェック開始",
+        b_color1: "green"
+      })
+    } else {
+      start_flg1 = 1
+      state_this.setState({
+        button1: "午睡チェック終了",
+        b_color1: "red"
+      })
+    }
   }
 
   start2() {
-    console.log("2");
+    if (start_flg2 == 1) {
+      start_flg2 = 0;
+      state_this.setState({
+        button2: "午睡チェック開始",
+        b_color2: "green"
+      })
+    } else {
+      start_flg2 = 1
+      state_this.setState({
+        button2: "午睡チェック終了",
+        b_color2: "red"
+      })
+    }
   }
 
   start3() {
-    console.log("3");
+    if (start_flg3 == 1) {
+      start_flg3 = 0;
+      state_this.setState({
+        button3: "午睡チェック開始",
+        b_color3: "green"
+      })
+    } else {
+      start_flg3 = 1
+      state_this.setState({
+        button3: "午睡チェック終了",
+        b_color3: "red"
+      })
+    }
   }
 
   start4() {
-    console.log("4");
+    if (start_flg4 == 1) {
+      start_flg4 = 0;
+      state_this.setState({
+        button4: "午睡チェック開始",
+        b_color4: "green"
+      })
+    } else {
+      start_flg4 = 1
+      state_this.setState({
+        button4: "午睡チェック終了",
+        b_color4: "red"
+      })
+    }
   }
 
   start5() {
-    console.log("5");
+    if (start_flg5 == 1) {
+      start_flg5 = 0;
+      state_this.setState({
+        button5: "午睡チェック開始",
+        b_color5: "green"
+      })
+    } else {
+      start_flg5 = 1
+      state_this.setState({
+        button5: "午睡チェック終了",
+        b_color5: "red"
+      })
+    }
   }
 
   start6() {
-    console.log("6");
+    if (start_flg6 == 1) {
+      start_flg6 = 0;
+      state_this.setState({
+        button6: "午睡チェック開始",
+        b_color6: "green"
+      })
+    } else {
+      start_flg6 = 1
+      state_this.setState({
+        button6: "午睡チェック終了",
+        b_color6: "red"
+      })
+    }
   }
 
   start7() {
-    console.log("7");
+    if (start_flg7 == 1) {
+      start_flg7 = 0;
+      state_this.setState({
+        button7: "午睡チェック開始",
+        b_color7: "green"
+      })
+    } else {
+      start_flg7 = 1
+      state_this.setState({
+        button7: "午睡チェック終了",
+        b_color7: "red"
+      })
+    }
   }
 
   start8() {
-    console.log("8");
+    if (start_flg8 == 1) {
+      start_flg8 = 0;
+      state_this.setState({
+        button8: "午睡チェック開始",
+        b_color8: "green"
+      })
+    } else {
+      start_flg8 = 1
+      state_this.setState({
+        button8: "午睡チェック終了",
+        b_color8: "red"
+      })
+    }
   }
 
   start9() {
-    console.log("9");
+    if (start_flg9 == 1) {
+      start_flg9 = 0;
+      state_this.setState({
+        button9: "午睡チェック開始",
+        b_color9: "green"
+      })
+    } else {
+      start_flg9 = 1
+      state_this.setState({
+        button9: "午睡チェック終了",
+        b_color9: "red"
+      })
+    }
   }
 
   start10() {
-    console.log("10");
+    if (start_flg10 == 1) {
+      start_flg10 = 0;
+      state_this.setState({
+        button10: "午睡チェック開始",
+        b_color10: "green"
+      })
+    } else {
+      start_flg10 = 1
+      state_this.setState({
+        button10: "午睡チェック終了",
+        b_color10: "red"
+      })
+    }
   }
 
   render() {
     return (
         <View style={styles.container}>
-          <ScrollView>
+          <ScrollView style={styles.sview}>
             <Text style={styles.text}>
-              トークン { token }
+              トークン
+              {"\n"}
+              { token }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color1}}>
               <Button
                 onPress={this.start1}
-                title="午睡チェック開始"
+                title={ this.state.button1 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.1 { name1 } { this.state.count }
+              NO.1： { this.state.direction1 }  { name1 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color2}}>
               <Button
                 onPress={this.start2}
-                title="午睡チェック開始"
+                title={ this.state.button2 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.2 { name2 } { this.state.count2 }
+              NO.2： { this.state.direction2 }  { name2 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color3}}>
               <Button
                 onPress={this.start3}
-                title="午睡チェック開始"
+                title={ this.state.button3 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.3 { name3 } { this.state.count3 }
+              NO.3： { this.state.direction3 }  { name3 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color4}}>
               <Button
                 onPress={this.start4}
-                title="午睡チェック開始"
+                title={ this.state.button4 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.4 { name4 } { this.state.count4 }
+              NO.4： { this.state.direction4 }  { name4 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color5}}>
               <Button
                 onPress={this.start5}
-                title="午睡チェック開始"
+                title={ this.state.button5 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.5 { name5 } { this.state.count5 }
+              NO.5： { this.state.direction5 }  { name5 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color6}}>
               <Button
                 onPress={this.start6}
-                title="午睡チェック開始"
+                title={ this.state.button6 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.6 { name6 } { this.state.count6 }
+              NO.6： { this.state.direction6 }  { name6 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color7}}>
               <Button
                 onPress={this.start7}
-                title="午睡チェック開始"
+                title={ this.state.button7 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.7 { name7 } { this.state.count7 }
+              NO.7： { this.state.direction7 }  { name7 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color8}}>
               <Button
                 onPress={this.start8}
-                title="午睡チェック開始"
+                title={ this.state.button8 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.8 { name8 } { this.state.count8 }
+              NO.8： { this.state.direction8 }  { name8 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color9}}>
               <Button
                 onPress={this.start9}
-                title="午睡チェック開始"
+                title={ this.state.button9 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.9 { name9 } { this.state.count9 }
+              NO.9： { this.state.direction9 }  { name9 }
+              {"\n"}
             </Text>
-            <View style={styles.button}>
+            <View style={{backgroundColor: this.state.b_color10}}>
               <Button
                 onPress={this.start10}
-                title="午睡チェック開始"
+                title={ this.state.button10 }
                 color="#000004"
               />
             </View>
             <Text style={styles.text}>
-              NO.10 { name10 } { this.state.count10 }
+              NO.10： { this.state.direction10 }  { name10 }
+              {"\n"}
             </Text>
           </ScrollView>
           <Modal visible={this.state.modalVisible}>
@@ -585,7 +751,7 @@ export default class App extends Component<{}> {
     try {
       const tno = await AsyncStorage.getItem("tno");
       if(tno) {
-        const baseURL = "https://www.cloudtest2.pw/cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO="+tno+"&token=cb4114e454732c67";//+token;
+        const baseURL = "https://www.cloudtest2.pw/cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO="+tno+"&token="+token;
         axios.get(baseURL).then((response) => {
           if (response) {
             if (Platform.OS == 'ios') {
@@ -653,20 +819,6 @@ function blue_connect(uuid) {
   });
 }
 
-function login_action () {
-  //下記urlにトークンも追加して現在登録されていないか確かめる
-  const baseURL = "https://www.cloudtest2.pw/cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO=10594&token=sssss";
-  axios.get(baseURL).then((response) => {
-    if (response) {
-      console.log(response.data);
-    } else {
-      //エラー表示
-      console.log("エラー表示");
-      setError("正しい情報を入力してください")
-    }
-  });
-}
-
 function blue_write(uuid, ios_uuid) {
   // 書き込みに必要、iosは通知にも必要
   BleManager.retrieveServices(ios_uuid);
@@ -701,14 +853,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingTop: 70,
+    paddingBottom: 50,
   },
   text: {
     fontSize: 25,
   },
-  button: {
-    backgroundColor: "pink",
-  },
   sview: {
-    alignItems: 'center',
+    width: "90%",
   },
 });
