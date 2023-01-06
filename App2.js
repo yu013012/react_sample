@@ -27,6 +27,12 @@ import axios from "axios";
 const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 
+// テスト環境
+let URL = "https://www.cloudtest2.pw/";
+
+// 本番環境
+//let URL = "https://www.it-service.co.jp/";
+
 // alertを出すか判断するフラグ
 let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;
 // サーバーのレスポンスからuuid or macaddressを格納
@@ -38,9 +44,11 @@ let mno1, mno2, mno3, mno4, mno5, mno6, mno7, mno8, mno9, mno10;
 // サーバーのレスポンスから担当を格納
 let tantou1, tantou2, tantou3, tantou4, tantou5, tantou6, tantou7, tantou8, tantou9, tantou10;
 // サーバーのレスポンスからカテゴリを格納
-let category1, category2, category3, category4, category5, category6, category7, category8, category9, category10;
+let katego1, katego2, katego3, katego4, katego5, katego6, katego7, katego8, katego9, katego10;
 // サーバーのレスポンスからuuidを格納(ios用)
 let uuid1_ios, uuid2_ios, uuid3_ios, uuid4_ios, uuid5_ios, uuid6_ios, uuid7_ios, uuid8_ios, uuid9_ios, uuid10_ios;
+// tno
+let tno;
 // 午睡開始ボタンを押したかどうか判断するフラグ
 let start_flg1 = 0; 
 let start_flg2 = 0;
@@ -159,62 +167,52 @@ export default class App extends Component<{}> {
       if (minute % 5 == 0) {
         if (start_flg1 == 1 && send_flg1 == 0) {
           send_flg1 = 1;
-          send_data(1);
-          console.log(date_str);
+          send_data(1, date_str);
         }
 
         if (start_flg2 == 1 && send_flg2 == 0) {
           send_flg2 = 1;
-          send_data(2);
-          console.log(date_str);
+          send_data(2, date_str);
         }
 
         if (start_flg3 == 1 && send_flg3 == 0) {
           send_flg3 = 1;
-          send_data(3);
-          console.log(date_str);
+          send_data(3, date_str);
         }
 
         if (start_flg4 == 1 && send_flg4 == 0) {
           send_flg4 = 1;
-          send_data(4);
-          console.log(date_str);
+          send_data(4, date_str);
         }
 
         if (start_flg5 == 1 && send_flg5 == 0) {
           send_flg5 = 1;
-          send_data(5);
-          console.log(date_str);
+          send_data(5, date_str);
         }
 
         if (start_flg6 == 1 && send_flg6 == 0) {
           send_flg6 = 1;
-          send_data(6);
-          console.log(date_str);
+          send_data(6, date_str);
         }
 
         if (start_flg7 == 1 && send_flg7 == 0) {
           send_flg7 = 1;
-          send_data(7);
-          console.log(date_str);
+          send_data(7, date_str);
         }
 
         if (start_flg8 == 1 && send_flg8 == 0) {
           send_flg8 = 1;
-          send_data(8);
-          console.log(date_str);
+          send_data(8, date_str);
         }
 
         if (start_flg9 == 1 && send_flg9 == 0) {
           send_flg9 = 1;
-          send_data(9);
-          console.log(date_str);
+          send_data(9, date_str);
         }
 
         if (start_flg10 == 1 && send_flg10 == 0) {
           send_flg10 = 1;
-          send_data(10);
-          console.log(date_str);
+          send_data(10, date_str);
         }
       
       // 5分じゃない場合はリセット
@@ -428,52 +426,52 @@ export default class App extends Component<{}> {
             if (peripheral == uuid1) {
               alert_flg1 = 0;
               state_this.setState({
-                direction1: "⇨"
+                direction1: "→"
               })
             } else if (peripheral == uuid2) {
               alert_flg2 = 0;
               state_this.setState({
-                direction2: "⇨"
+                direction2: "→"
               })
             } else if (peripheral == uuid3) {
               alert_flg3 = 0;
               state_this.setState({
-                direction3: "⇨"
+                direction3: "→"
               })
             } else if (peripheral == uuid4) {
               alert_flg4 = 0;
               state_this.setState({
-                direction4: "⇨"
+                direction4: "→"
               })
             } else if (peripheral == uuid5) {
               alert_flg5 = 0;
               state_this.setState({
-                direction5: "⇨"
+                direction5: "→"
               })
             } else if (peripheral == uuid6) {
               alert_flg6 = 0;
               state_this.setState({
-                direction6: "⇨"
+                direction6: "→"
               })
             } else if (peripheral == uuid7) {
               alert_flg7 = 0;
               state_this.setState({
-                direction7: "⇨"
+                direction7: "→"
               })
             } else if (peripheral == uuid8) {
               alert_flg8 = 0;
               state_this.setState({
-                direction8: "⇨"
+                direction8: "→"
               })
             } else if (peripheral == uuid9) {
               alert_flg9 = 0;
               state_this.setState({
-                direction9: "⇨"
+                direction9: "→"
               })
             } else {
               alert_flg10 = 0;
               state_this.setState({
-                direction10: "⇨"
+                direction10: "→"
               })
             }
           
@@ -482,52 +480,52 @@ export default class App extends Component<{}> {
             if (peripheral == uuid1) {
               alert_flg1 = 0;
               state_this.setState({
-                direction1: "⇦"
+                direction1: "←"
               })
             } else if (peripheral == uuid2) {
               alert_flg2 = 0;
               state_this.setState({
-                direction2: "⇦"
+                direction2: "←"
               })
             } else if (peripheral == uuid3) {
               alert_flg3 = 0;
               state_this.setState({
-                direction3: "⇦"
+                direction3: "←"
               })
             } else if (peripheral == uuid4) {
               alert_flg4 = 0;
               state_this.setState({
-                direction4: "⇦"
+                direction4: "←"
               })
             } else if (peripheral == uuid5) {
               alert_flg5 = 0;
               state_this.setState({
-                direction5: "⇦"
+                direction5: "←"
               })
             } else if (peripheral == uuid6) {
               alert_flg6 = 0;
               state_this.setState({
-                direction6: "⇦"
+                direction6: "←"
               })
             } else if (peripheral == uuid7) {
               alert_flg7 = 0;
               state_this.setState({
-                direction7: "⇦"
+                direction7: "←"
               })
             } else if (peripheral == uuid8) {
               alert_flg8 = 0;
               state_this.setState({
-                direction8: "⇦"
+                direction8: "←"
               })
             } else if (peripheral == uuid9) {
               alert_flg9 = 0;
               state_this.setState({
-                direction9: "⇦"
+                direction9: "←"
               })
             } else {
               alert_flg1 = 0;
               state_this.setState({
-                direction10: "⇦"
+                direction10: "←"
               })
             }
           }
@@ -591,162 +589,183 @@ export default class App extends Component<{}> {
 
   // start1~start10 午睡開始ボタンを押したときに呼ばれる
   start1() {
-    if (start_flg1 == 1) {
-      start_flg1 = 0;
-      state_this.setState({
-        button1: "午睡チェック開始",
-        b_color1: "green"
-      })
-    } else {
-      start_flg1 = 1
-      state_this.setState({
-        button1: "午睡チェック終了",
-        b_color1: "red"
-      })
+    // start1~start10 データが登録されていなかった時、対策
+    if (state_this.state.direction1 && name1 && katego1 && mno1) {
+      if (start_flg1 == 1) {
+        start_flg1 = 0;
+        state_this.setState({
+          button1: "午睡チェック開始",
+          b_color1: "green"
+        })
+      } else {
+        start_flg1 = 1
+        state_this.setState({
+          button1: "午睡チェック終了",
+          b_color1: "red"
+        })
+      }
     }
   }
 
   start2() {
-    if (start_flg2 == 1) {
-      start_flg2 = 0;
-      state_this.setState({
-        button2: "午睡チェック開始",
-        b_color2: "green"
-      })
-    } else {
-      start_flg2 = 1
-      state_this.setState({
-        button2: "午睡チェック終了",
-        b_color2: "red"
-      })
+    if (state_this.state.direction2 && name2 && katego2 && mno2) {
+      if (start_flg2 == 1) {
+        start_flg2 = 0;
+        state_this.setState({
+          button2: "午睡チェック開始",
+          b_color2: "green"
+        })
+      } else {
+        start_flg2 = 1
+        state_this.setState({
+          button2: "午睡チェック終了",
+          b_color2: "red"
+        })
+      }
     }
   }
 
   start3() {
-    if (start_flg3 == 1) {
-      start_flg3 = 0;
-      state_this.setState({
-        button3: "午睡チェック開始",
-        b_color3: "green"
-      })
-    } else {
-      start_flg3 = 1
-      state_this.setState({
-        button3: "午睡チェック終了",
-        b_color3: "red"
-      })
+    if (state_this.state.direction3 && name3 && katego3 && mno3) {
+      if (start_flg3 == 1) {
+        start_flg3 = 0;
+        state_this.setState({
+          button3: "午睡チェック開始",
+          b_color3: "green"
+        })
+      } else {
+        start_flg3 = 1
+        state_this.setState({
+          button3: "午睡チェック終了",
+          b_color3: "red"
+        })
+      }
     }
   }
 
   start4() {
-    if (start_flg4 == 1) {
-      start_flg4 = 0;
-      state_this.setState({
-        button4: "午睡チェック開始",
-        b_color4: "green"
-      })
-    } else {
-      start_flg4 = 1
-      state_this.setState({
-        button4: "午睡チェック終了",
-        b_color4: "red"
-      })
+    if (state_this.state.direction4 && name4 && katego4 && mno4) {
+      if (start_flg4 == 1) {
+        start_flg4 = 0;
+        state_this.setState({
+          button4: "午睡チェック開始",
+          b_color4: "green"
+        })
+      } else {
+        start_flg4 = 1
+        state_this.setState({
+          button4: "午睡チェック終了",
+          b_color4: "red"
+        })
+      }
     }
   }
 
   start5() {
-    if (start_flg5 == 1) {
-      start_flg5 = 0;
-      state_this.setState({
-        button5: "午睡チェック開始",
-        b_color5: "green"
-      })
-    } else {
-      start_flg5 = 1
-      state_this.setState({
-        button5: "午睡チェック終了",
-        b_color5: "red"
-      })
+    if (state_this.state.direction5 && name5 && katego5 && mno5) {
+      if (start_flg5 == 1) {
+        start_flg5 = 0;
+        state_this.setState({
+          button5: "午睡チェック開始",
+          b_color5: "green"
+        })
+      } else {
+        start_flg5 = 1
+        state_this.setState({
+          button5: "午睡チェック終了",
+          b_color5: "red"
+        })
+      }
     }
   }
 
   start6() {
-    if (start_flg6 == 1) {
-      start_flg6 = 0;
-      state_this.setState({
-        button6: "午睡チェック開始",
-        b_color6: "green"
-      })
-    } else {
-      start_flg6 = 1
-      state_this.setState({
-        button6: "午睡チェック終了",
-        b_color6: "red"
-      })
+    if (state_this.state.direction6 && name6 && katego6 && mno6) {
+      if (start_flg6 == 1) {
+        start_flg6 = 0;
+        state_this.setState({
+          button6: "午睡チェック開始",
+          b_color6: "green"
+        })
+      } else {
+        start_flg6 = 1
+        state_this.setState({
+          button6: "午睡チェック終了",
+          b_color6: "red"
+        })
+      }
     }
   }
 
   start7() {
-    if (start_flg7 == 1) {
-      start_flg7 = 0;
-      state_this.setState({
-        button7: "午睡チェック開始",
-        b_color7: "green"
-      })
-    } else {
-      start_flg7 = 1
-      state_this.setState({
-        button7: "午睡チェック終了",
-        b_color7: "red"
-      })
+    if (state_this.state.direction7 && name7 && katego7 && mno7) {
+      if (start_flg7 == 1) {
+        start_flg7 = 0;
+        state_this.setState({
+          button7: "午睡チェック開始",
+          b_color7: "green"
+        })
+      } else {
+        start_flg7 = 1
+        state_this.setState({
+          button7: "午睡チェック終了",
+          b_color7: "red"
+        })
+      }
     }
   }
 
   start8() {
-    if (start_flg8 == 1) {
-      start_flg8 = 0;
-      state_this.setState({
-        button8: "午睡チェック開始",
-        b_color8: "green"
-      })
-    } else {
-      start_flg8 = 1
-      state_this.setState({
-        button8: "午睡チェック終了",
-        b_color8: "red"
-      })
+    if (state_this.state.direction8 && name8 && katego8 && mno8) {
+      if (start_flg8 == 1) {
+        start_flg8 = 0;
+        state_this.setState({
+          button8: "午睡チェック開始",
+          b_color8: "green"
+        })
+      } else {
+        start_flg8 = 1
+        state_this.setState({
+          button8: "午睡チェック終了",
+          b_color8: "red"
+        })
+      }
     }
   }
 
   start9() {
-    if (start_flg9 == 1) {
-      start_flg9 = 0;
-      state_this.setState({
-        button9: "午睡チェック開始",
-        b_color9: "green"
-      })
-    } else {
-      start_flg9 = 1
-      state_this.setState({
-        button9: "午睡チェック終了",
-        b_color9: "red"
-      })
+    if (state_this.state.direction9 && name9 && katego9 && mno9) {
+      if (start_flg9 == 1) {
+        start_flg9 = 0;
+        state_this.setState({
+          button9: "午睡チェック開始",
+          b_color9: "green"
+        })
+      } else {
+        start_flg9 = 1
+        state_this.setState({
+          button9: "午睡チェック終了",
+          b_color9: "red"
+        })
+      }
     }
   }
 
   start10() {
-    if (start_flg10 == 1) {
-      start_flg10 = 0;
-      state_this.setState({
-        button10: "午睡チェック開始",
-        b_color10: "green"
-      })
-    } else {
-      start_flg10 = 1
-      state_this.setState({
-        button10: "午睡チェック終了",
-        b_color10: "red"
-      })
+    if (state_this.state.direction10 && name10 && katego10 && mno10) {
+      if (start_flg10 == 1) {
+        start_flg10 = 0;
+        state_this.setState({
+          button10: "午睡チェック開始",
+          b_color10: "green"
+        })
+      } else {
+        start_flg10 = 1
+        state_this.setState({
+          button10: "午睡チェック終了",
+          b_color10: "red"
+        })
+      }
     }
   }
 
@@ -885,9 +904,10 @@ export default class App extends Component<{}> {
   // データの存在を確認後blue開始
   loadItem = async () => {
     try {
-      const tno = await AsyncStorage.getItem("tno");
+      const tno_data = await AsyncStorage.getItem("tno");
+      tno = tno_data;
       if(tno) {
-        const baseURL = "https://www.cloudtest2.pw/cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO="+tno+"&token="+token;
+        const baseURL = URL+"cgi-local/gosui/gosui_app.pl?ACT=GET_DATA&TNO="+tno+"&token="+token;
         axios.get(baseURL).then((response) => {
           if (response) {
             if (Platform.OS == 'ios') {
@@ -934,6 +954,39 @@ export default class App extends Component<{}> {
             name8 = response.data.name8;
             name9 = response.data.name9;
             name10 = response.data.name10;
+
+            tantou1 = response.data.tantou1;
+            tantou2 = response.data.tantou2;
+            tantou3 = response.data.tantou3;
+            tantou4 = response.data.tantou4;
+            tantou5 = response.data.tantou5;
+            tantou6 = response.data.tantou6;
+            tantou7 = response.data.tantou7;
+            tantou8 = response.data.tantou8;
+            tantou9 = response.data.tantou9;
+            tantou10 = response.data.tantou10;
+
+            katego1 = response.data.katego1;
+            katego2 = response.data.katego2;
+            katego3 = response.data.katego3;
+            katego4 = response.data.katego4;
+            katego5 = response.data.katego5;
+            katego6 = response.data.katego6;
+            katego7 = response.data.katego7;
+            katego8 = response.data.katego8;
+            katego9 = response.data.katego9;
+            katego10 = response.data.katego10;
+
+            mno1 = response.data.mno1;
+            mno2 = response.data.mno2;
+            mno3 = response.data.mno3;
+            mno4 = response.data.mno4;
+            mno5 = response.data.mno5;
+            mno6 = response.data.mno6;
+            mno7 = response.data.mno7;
+            mno8 = response.data.mno8;
+            mno9 = response.data.mno9;
+            mno10 = response.data.mno10;
           } else {
             //エラー表示
             console.log("エラー表示");
@@ -984,12 +1037,143 @@ function blue_notification(uuid) {
   });
 }
 
-function send_data (num) {
-  //const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD&TNO=$inputTno&MNO=$mno&record_direction=s&record_date=20221010101110&category_react=2342333&tantou_react=田中";
-  //axios.get(baseURL).then((response) => {
-  //  console.log(response);
-  //});
-  console.log(num + "を送りました");
+function send_data (num, data) {
+  let mno, katego, tantou, direction;
+  if (num == 1) {
+    mno = mno1;
+    katego = katego1;
+    tantou = tantou1;
+    if (state_this.state.direction1 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction1 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction1 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction1 == "→") {
+      direction = "r";
+    }
+  } else if (num == 2) {
+    mno = mno2;
+    katego = katego2;
+    tantou = tantou2;
+    if (state_this.state.direction2 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction2 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction2 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction2 == "→") {
+      direction = "r";
+    }
+  } else if (num == 3) {
+    mno = mno3;
+    katego = katego3;
+    tantou = tantou3;
+    if (state_this.state.direction3 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction3 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction3 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction3 == "→") {
+      direction = "r";
+    }
+  } else if (num == 4) {
+    mno = mno4;
+    katego = katego4;
+    tantou = tantou4;
+    if (state_this.state.direction4 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction4 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction4 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction4 == "→") {
+      direction = "r";
+    }
+  } else if (num == 5) {
+    mno = mno5;
+    katego = katego5;
+    tantou = tantou5;
+    if (state_this.state.direction5 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction5 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction5 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction5 == "→") {
+      direction = "r";
+    }
+  } else if (num == 6) {
+    mno = mno6;
+    katego = katego6;
+    tantou = tantou6;
+    if (state_this.state.direction6 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction6 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction6 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction6 == "→") {
+      direction = "r";
+    }
+  } else if (num == 7) {
+    mno = mno7;
+    katego = katego7;
+    tantou = tantou7;
+    if (state_this.state.direction7 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction7 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction7 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction7 == "→") {
+      direction = "r";
+    }
+  } else if (num == 8) {
+    mno = mno8;
+    katego = katego8;
+    tantou = tantou8;
+    if (state_this.state.direction8 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction8 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction8 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction8 == "→") {
+      direction = "r";
+    }
+  } else if (num == 9) {
+    mno = mno9;
+    katego = katego9;
+    tantou = tantou9;
+    if (state_this.state.direction9 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction9 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction9 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction9 == "→") {
+      direction = "r";
+    }
+  } else if (num == 10) {
+    mno = mno10;
+    katego = katego10;
+    tantou = tantou10;
+    if (state_this.state.direction10 == "↑") {
+      direction = "u";
+    } else if (state_this.state.direction10 == "↓") {
+      direction = "d";
+    } else if (state_this.state.direction10 == "←") {
+      direction = "l";
+    } else if (state_this.state.direction10 == "→") {
+      direction = "r";
+    }
+  }
+  const baseURL = URL+"cgi-local/gosui/gosui_app.pl?ACT=UPDATE_RECORD_REACT&TNO="+tno+"&MNO="+mno+"&record_direction="+direction+"&record_date="+data+"&category_react="+katego+"&tantou_react="+tantou;
+  axios.get(baseURL).then((response) => {
+    console.log(num + "を送りました");
+  });
 }
 
 const styles = StyleSheet.create({

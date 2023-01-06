@@ -6,6 +6,12 @@ import App2 from './App2';
 import axios from "axios";
 import Storage from 'react-native-storage';
 
+// テスト環境
+let URL = "https://www.cloudtest2.pw/";
+
+// 本番環境
+//let URL = "https://www.it-service.co.jp/";
+
 // 他メソッドで使うためthisとnavigationを下記に格納
 let this_, navigation_;
 // ページ遷移用
@@ -92,7 +98,7 @@ const styles = StyleSheet.create({
 });
 
 function login_action () {
-  const baseURL = "https://www.it-service.co.jp/cgi-local/gosui/gosui_app.pl?ACT=CHECK_TNO&ID="+id+"&PASS="+pass;
+  const baseURL = URL+"cgi-local/gosui/gosui_app.pl?ACT=CHECK_TNO&ID="+id+"&PASS="+pass;
   axios.get(baseURL).then((response) => {
     if (response.data.tno) {
       this_.saveItem(response.data.tno);
