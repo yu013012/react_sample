@@ -1,10 +1,10 @@
-import React, { Component, useState, useEffect } from 'react';
-import {StyleSheet, View, Text, Button, TextInput, SafeAreaView, AsyncStorage, LogBox} from 'react-native';
+import React, { Component, useState } from 'react';
+import {StyleSheet, View, Text, Button, TextInput, SafeAreaView, AsyncStorage, LogBox, NativeEventEmitter, NativeModules} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import App2 from './App2';
 import axios from "axios";
-import Storage from 'react-native-storage';
+import BleManager from 'react-native-ble-manager';
 
 // テスト環境
 let URL = "https://www.cloudtest2.pw/";
@@ -21,12 +21,15 @@ let id, setId, pass, setPass, error, setError;
 // warning削除
 LogBox.ignoreAllLogs();
 
+const BleManagerModule = NativeModules.BleManager;
+const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
+
 export default class App extends Component<{}> {
   
   constructor(props) {
     super(props);
     this_ = this;
-
+    
     //render後に処理を行うためタイマーをセット
     setTimeout(() => {
       // データの存在を確認
@@ -40,6 +43,9 @@ export default class App extends Component<{}> {
       const tno = await AsyncStorage.getItem("tno");
       if(tno) {
         navigation_.navigate('Home');
+      } else {
+        // 初回だけblue権限を求めるために下記実行
+        BleManager.start({ showAlert: false });
       }
     } catch (e) {
       console.log(e)
