@@ -420,9 +420,8 @@ export default class App extends Component<{}> {
 
         // 横向きの時
         } else if (224 <= dataArray[17] && dataArray[17] <= 255 || 0 <= dataArray[17] && dataArray[17] <= 30) {
-          
           // 右向き
-          if (224 <= dataArray[17] && dataArray[17] <= 255) {
+          if (190 <= dataArray[15] && dataArray[15] <= 255) {
             if (peripheral == uuid1) {
               alert_flg1 = 0;
               state_this.setState({
@@ -475,8 +474,8 @@ export default class App extends Component<{}> {
               })
             }
           
-            // 左向き
-          } else if (0 <= dataArray[17] && dataArray[17] <= 30) {
+          // 左向き
+          } else if (0 <= dataArray[15] && dataArray[15] <= 65) {
             if (peripheral == uuid1) {
               alert_flg1 = 0;
               state_this.setState({
@@ -526,6 +525,58 @@ export default class App extends Component<{}> {
               alert_flg1 = 0;
               state_this.setState({
                 direction10: "←"
+              })
+            }
+          } else {
+            if (peripheral == uuid1) {
+              alert_flg1 = 0;
+              state_this.setState({
+                direction1: "↑"
+              })
+            } else if (peripheral == uuid2) {
+              alert_flg2 = 0;
+              state_this.setState({
+                direction2: "↑"
+              })
+            } else if (peripheral == uuid3) {
+              alert_flg3 = 0;
+              state_this.setState({
+                direction3: "↑"
+              })
+            } else if (peripheral == uuid4) {
+              alert_flg4 = 0;
+              state_this.setState({
+                direction4: "↑"
+              })
+            } else if (peripheral == uuid5) {
+              alert_flg5 = 0;
+              state_this.setState({
+                direction5: "↑"
+              })
+            } else if (peripheral == uuid6) {
+              alert_flg6 = 0;
+              state_this.setState({
+                direction6: "↑"
+              })
+            } else if (peripheral == uuid7) {
+              alert_flg7 = 0;
+              state_this.setState({
+                direction7: "↑"
+              })
+            } else if (peripheral == uuid8) {
+              alert_flg8 = 0;
+              state_this.setState({
+                direction8: "↑"
+              })
+            } else if (peripheral == uuid9) {
+              alert_flg9 = 0;
+              state_this.setState({
+                direction9: "↑"
+              })
+            } else {
+              alert_flg10 = 0;
+              state_this.setState({
+                direction10: "↑"
               })
             }
           }
