@@ -28,10 +28,10 @@ const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 
 // テスト環境
-let URL = "https://www.cloudtest2.pw/";
+//let URL = "https://www.cloudtest2.pw/";
 
 // 本番環境
-//let URL = "https://www.it-service.co.jp/";
+let URL = "https://www.it-service.co.jp/";
 
 // alertを出すか判断するフラグ
 let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;

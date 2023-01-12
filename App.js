@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import App2 from './App2';
 import axios from "axios";
 import Storage from 'react-native-storage';
+import DeviceInfo from 'react-native-device-info';
 
 // テスト環境
 let URL = "https://www.cloudtest2.pw/";
@@ -20,6 +21,8 @@ const Stack = createStackNavigator()
 let id, setId, pass, setPass, error, setError;
 // warning削除
 LogBox.ignoreAllLogs();
+// 端末の固有トークン格納
+let token, setToken;
 
 export default class App extends Component<{}> {
   
@@ -31,6 +34,10 @@ export default class App extends Component<{}> {
     setTimeout(() => {
       // データの存在を確認
       this_.loadItem();
+      // token取得
+      DeviceInfo.getUniqueId().then((uniqueId) => {
+        setToken(uniqueId);
+      });
     }, 1000);
   }  
   
@@ -105,6 +112,7 @@ function login_action () {
       navigation_.navigate('Home');
     } else {
       //エラー表示
+      setError("IDまたはパスワードが正しくありません");
       console.log("エラー表示");
     }
   });
@@ -115,6 +123,7 @@ function DetailsScreen({ navigation }) {
   [id, setId] = useState('');
   [pass, setPass] = useState('');
   [error, setError] = useState('');
+  [token, setToken] = useState('');
   
   return (
     <View style={styles.container}>
@@ -123,6 +132,9 @@ function DetailsScreen({ navigation }) {
       </Text>
       <Text style={styles.error}>
         { error }
+      </Text>
+      <Text>
+        トークン：{ token }
       </Text>
       <TextInput
         style={styles.input}
