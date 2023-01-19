@@ -1,5 +1,18 @@
 import React, { Component, useState } from 'react';
-import {StyleSheet, View, Text, Button, TextInput, SafeAreaView, AsyncStorage, LogBox, NativeEventEmitter, NativeModules} from 'react-native';
+import {
+  StyleSheet, 
+  View, 
+  Text, 
+  Button, 
+  TextInput, 
+  SafeAreaView, 
+  AsyncStorage, 
+  LogBox, 
+  NativeEventEmitter, 
+  NativeModules,
+  PermissionsAndroid,
+  Platform
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import App2 from './App2';
@@ -49,11 +62,20 @@ export default class App extends Component<{}> {
   loadItem = async () => {
     try {
       const tno = await AsyncStorage.getItem("tno");
+      if (Platform.OS != 'ios') {
+        const isAuthorized = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN);
+        if (isAuthorized == false) {
+          const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN);
+        }
+      }
+      
       if(tno) {
         navigation_.navigate('Home');
       } else {
-        // 初回だけblue権限を求めるために下記実行
-        BleManager.start({ showAlert: false });
+        // 初回にblue権限を求めるために下記実行
+        if (Platform.OS == 'ios') {
+          BleManager.start({ showAlert: false });
+        }
       }
     } catch (e) {
       console.log(e)
