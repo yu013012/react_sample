@@ -244,12 +244,14 @@ export default class App extends Component<{}> {
       // 1時間スキャンする
       BleManager.scan([], 18000, true).then(() => {
         // スキャンすると下記イベントが呼ばれる
+        // androidで下記が呼ばれない不具合が起きているので最悪この行に接続する処理を記載する
         bleManagerEmitter.addListener(
           'BleManagerDiscoverPeripheral',
           (args) => {
             // 設定されたuuidであれば接続して情報を受け取る
             if (args.id == uuid1) {
               blue_connect(uuid1)
+              // iosで書き込みが遅れる不具合が起きているので定期的に書き込みを行う処理を加える
               blue_write(uuid1, uuid1_ios)
               blue_notification(uuid1)
             }
