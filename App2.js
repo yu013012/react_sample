@@ -28,10 +28,10 @@ const BleManagerModule = NativeModules.BleManager;
 const bleManagerEmitter = new NativeEventEmitter(BleManagerModule);
 
 // テスト環境
-//let URL = "https://www.cloudtest2.pw/";
+let URL = "https://www.cloudtest2.pw/";
 
 // 本番環境
-let URL = "https://www.it-service.co.jp/";
+//let URL = "https://www.it-service.co.jp/";
 
 // alertを出すか判断するフラグ
 let alert_flg1, alert_flg2, alert_flg3, alert_flg4, alert_flg5, alert_flg6, alert_flg7, alert_flg8, alert_flg9, alert_flg10;
@@ -47,6 +47,8 @@ let tantou1, tantou2, tantou3, tantou4, tantou5, tantou6, tantou7, tantou8, tant
 let katego1, katego2, katego3, katego4, katego5, katego6, katego7, katego8, katego9, katego10;
 // サーバーのレスポンスからuuidを格納(ios用)
 let uuid1_ios, uuid2_ios, uuid3_ios, uuid4_ios, uuid5_ios, uuid6_ios, uuid7_ios, uuid8_ios, uuid9_ios, uuid10_ios;
+// alertを出すか判断するフラグ
+let connected1, connected2, connected3, connected4, connected5, connected6, connected7, connected8, connected9, connected10;
 // tno
 let tno;
 // 午睡開始ボタンを押したかどうか判断するフラグ
@@ -133,9 +135,7 @@ export default class App extends Component<{}> {
     });
 
     // センサーデータ読み込み
-    setTimeout(() => {
-      this.loadItem();
-    }, 1000);
+    this.loadItem();
 
     // 1.5秒ごとにalertを実行
     setInterval(() => {
@@ -244,66 +244,62 @@ export default class App extends Component<{}> {
       // 1時間スキャンする
       BleManager.scan([], 18000, true).then(() => {
         // スキャンすると下記イベントが呼ばれる
-        // androidで下記が呼ばれない不具合が起きているので最悪この行に接続する処理を記載する
-        bleManagerEmitter.addListener(
-          'BleManagerDiscoverPeripheral',
-          (args) => {
-            // 設定されたuuidであれば接続して情報を受け取る
-            if (args.id == uuid1) {
-              blue_connect(uuid1)
-              // iosで書き込みが遅れる不具合が起きているので定期的に書き込みを行う処理を加える
-              blue_write(uuid1, uuid1_ios)
-              blue_notification(uuid1)
-            }
-            if (args.id == uuid2) {
-              blue_connect(uuid2)
-              blue_write(uuid2, uuid2_ios)
-              blue_notification(uuid2)
-            }
-            if (args.id == uuid3) {
-              blue_connect(uuid3)
-              blue_write(uuid3, uuid3_ios)
-              blue_notification(uuid3)
-            }
-            if (args.id == uuid4) {
-              blue_connect(uuid4)
-              blue_write(uuid4, uuid4_ios)
-              blue_notification(uuid4)
-            }
-            if (args.id == uuid5) {
-              blue_connect(uuid5)
-              blue_write(uuid5, uuid5_ios)
-              blue_notification(uuid5)
-            }
-            if (args.id == uuid6) {
-              blue_connect(uuid6)
-              blue_write(uuid6, uuid6_ios)
-              blue_notification(uuid6)
-            }
-            if (args.id == uuid7) {
-              blue_connect(uuid7)
-              blue_write(uuid7, uuid7_ios)
-              blue_notification(uuid7)
-            }
-            if (args.id == uuid8) {
-              blue_connect(uuid8)
-              blue_write(uuid8, uuid8_ios)
-              blue_notification(uuid8)
-            }
-            if (args.id == uuid9) {
-              blue_connect(uuid9)
-              blue_write(uuid9, uuid9_ios)
-              blue_notification(uuid9)
-            }
-            if (args.id == uuid10) {
-              blue_connect(uuid10)
-              blue_write(uuid10, uuid10_ios)
-              blue_notification(uuid10)
-            }
+        // yniwa
+        setInterval(() => {
+          if (uuid1 != undefined && connected1 != 3) {
+            blue_connect(uuid1, 1, connected1)
+            blue_write(uuid1, uuid1_ios, 1, connected1)
+            blue_notification(uuid1, 1, connected1)
           }
-        );
+          if (uuid2 != undefined && connected2 != 3) {
+            blue_connect(uuid2, 2, connected2)
+            blue_write(uuid2, uuid2_ios, 2, connected2)
+            blue_notification(uuid2, 2, connected2)
+          }
+          if (uuid3 != undefined && connected3 != 3) {
+            blue_connect(uuid3, 3, connected3)
+            blue_write(uuid3, uuid3_ios, 3, connected3)
+            blue_notification(uuid3, 3, connected3)
+          }
+          if (uuid4 != undefined && connected4 != 3) {
+            blue_connect(uuid4, 4, connected4)
+            blue_write(uuid4, uuid4_ios, 4, connected4)
+            blue_notification(uuid4, 4, connected4)
+          }
+          if (uuid5 != undefined && connected5 != 3) {
+            blue_connect(uuid5, 5, connected5)
+            blue_write(uuid5, uuid5_ios, 5, connected5)
+            blue_notification(uuid5, 5, connected5)
+          }
+          if (uuid6 != undefined && connected6 != 3) {
+            blue_connect(uuid6, 6, connected6)
+            blue_write(uuid6, uuid6_ios, 6, connected6)
+            blue_notification(uuid6, 6, connected6)
+          }
+          if (uuid7 != undefined && connected7 != 3) {
+            blue_connect(uuid7, 7, connected7)
+            blue_write(uuid7, uuid7_ios, 7, connected7)
+            blue_notification(uuid7, 7, connected7)
+          }
+          if (uuid8 != undefined && connected8 != 3) {
+            blue_connect(uuid8, 8, connected8)
+            blue_write(uuid8, uuid8_ios, 8, connected8)
+            blue_notification(uuid8, 8, connected8)
+          }
+          if (uuid9 != undefined && connected9 != 3) {
+            blue_connect(uuid9, 9, connected9)
+            blue_write(uuid9, uuid9_ios, 9, connected9)
+            blue_notification(uuid9, 9, connected9)
+          }
+          if (uuid10 != undefined && connected10 != 3) {
+            blue_connect(uuid10, 10, connected10)
+            blue_write(uuid10, uuid10_ios, 10, connected10)
+            blue_notification(uuid10, 10, connected10)
+          }
+        }, 5000);
+        // yniwa
       }).catch((error) => {
-        console.log("error");
+        console.log("error4");
       });
 
       // 定期的に通知を取得
@@ -986,6 +982,7 @@ export default class App extends Component<{}> {
               uuid9 = response.data.mac9;
               uuid10 = response.data.mac10;
             }
+
             uuid1_ios = response.data.uuid1;
             uuid2_ios = response.data.uuid2;
             uuid3_ios = response.data.uuid3;
@@ -1052,42 +1049,111 @@ export default class App extends Component<{}> {
   }
 }
 
-function blue_connect(uuid) {
-  // 接続
-  BleManager.connect(uuid).then(() => {
-  })
-  .catch((error) => {
-    blue_connect(uuid)
-  });
+function blue_connect(uuid, num, connected) {
+  if (connected == undefined) {
+    // 接続
+    BleManager.connect(uuid).then(() => {
+      if (num == 1) {
+        connected1 = 1;
+      } else if (num == 2) {
+        connected2 = 1;
+      } else if (num == 3) {
+        connected3 = 1;
+      } else if (num == 4) {
+        connected4 = 1;
+      } else if (num == 5) {
+        connected5 = 1;
+      } else if (num == 6) {
+        connected6 = 1;
+      } else if (num == 7) {
+        connected7 = 1;
+      } else if (num == 8) {
+        connected8 = 1;
+      } else if (num == 9) {
+        connected9 = 1;
+      } else if (num == 10) {
+        connected10 = 1;
+      }
+    })
+    .catch((error) => {
+      console.log("error1");
+    });
+  }
 }
 
-function blue_write(uuid, ios_uuid) {
-  // 書き込みに必要、iosは通知にも必要
-  BleManager.retrieveServices(ios_uuid);
-  BleManager.writeWithoutResponse(
-    uuid,
-      "0000c62e-9910-0bac-5241-d8bda6932a2f",
-      "00000d2e-1c03-aca1-ab48-a9b908bae79e",
-      [0x28, 0x43, 0x44, 0x02, 0x03, 0x29]
-  )
-  .then((data) => {
-  })
-  .catch((error) => {
-    blue_write(uuid, ios_uuid)
-  });
+function blue_write(uuid, ios_uuid, num, connected) {
+  if (connected == 1) {
+    // 書き込みに必要、iosは通知にも必要
+    BleManager.retrieveServices(ios_uuid);
+    BleManager.writeWithoutResponse(
+      uuid,
+        "0000c62e-9910-0bac-5241-d8bda6932a2f",
+        "00000d2e-1c03-aca1-ab48-a9b908bae79e",
+        [0x28, 0x43, 0x44, 0x02, 0x03, 0x29]
+    )
+    .then((data) => {
+      if (num == 1) {
+        connected1 = 2;
+      } else if (num == 2) {
+        connected2 = 2;
+      } else if (num == 3) {
+        connected3 = 2;
+      } else if (num == 4) {
+        connected4 = 2;
+      } else if (num == 5) {
+        connected5 = 2;
+      } else if (num == 6) {
+        connected6 = 2;
+      } else if (num == 7) {
+        connected7 = 2;
+      } else if (num == 8) {
+        connected8 = 2;
+      } else if (num == 9) {
+        connected9 = 2;
+      } else if (num == 10) {
+        connected10 = 2;
+      }
+    })
+    .catch((error) => {
+      console.log("error2");
+    });
+  }
 }
 
-function blue_notification(uuid) {
-  BleManager.startNotification(
-    uuid,
-    "0000C62E-9910-0BAC-5241-D8BDA6932A2F",
-    "00005991-B131-3396-014C-664C9867B917"
-  )
-  .then(() => {
-  })
-  .catch((error) => {
-    blue_notification(uuid)
-  });
+function blue_notification(uuid, num, data) {
+  if (data == 2) {
+    BleManager.startNotification(
+      uuid,
+      "0000C62E-9910-0BAC-5241-D8BDA6932A2F",
+      "00005991-B131-3396-014C-664C9867B917"
+    )
+    .then(() => {
+      if (num == 1) {
+        connected1 = 3;
+      } else if (num == 2) {
+        connected2 = 3;
+      } else if (num == 3) {
+        connected3 = 3;
+      } else if (num == 4) {
+        connected4 = 3;
+      } else if (num == 5) {
+        connected5 = 3;
+      } else if (num == 6) {
+        connected6 = 3;
+      } else if (num == 7) {
+        connected7 = 3;
+      } else if (num == 8) {
+        connected8 = 3;
+      } else if (num == 9) {
+        connected9 = 3;
+      } else if (num == 10) {
+        connected10 = 3;
+      }
+    })
+    .catch((error) => {
+      console.log("error3");
+    });
+  }
 }
 
 function send_data (num, data) {

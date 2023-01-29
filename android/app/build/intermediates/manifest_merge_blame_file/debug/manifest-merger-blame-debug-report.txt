@@ -14,133 +14,120 @@
 12    <uses-permission android:name="android.permission.INTERNET" />
 12-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:4:5-67
 12-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:5:5-78
-13-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:5:22-76
-14    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-14-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:5-80
-14-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:22-78
+13
+14    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:5:5-85
+14-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:5:29-83
 15
 16    <uses-feature
-16-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:5-89
+16-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:5-89
 17        android:name="android.hardware.bluetooth_le"
-17-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:19-63
+17-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:19-63
 18        android:required="true" />
-18-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:64-87
+18-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:6:64-87
 19
-20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Request legacy Bluetooth permissions on older devices. -->
-20-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:8:5-76
-20-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:8:22-74
+20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+20-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:5-76
+20-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:7:22-74
 21    <uses-permission
-21-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:10:5-11:38
+21-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:8:5-9:38
 22        android:name="android.permission.BLUETOOTH"
-22-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:10:22-65
+22-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:8:22-65
 23        android:maxSdkVersion="30" />
-23-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:11:9-35
+23-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:9:9-35
 24    <uses-permission
-24-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:12:5-13:38
+24-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:10:5-11:38
 25        android:name="android.permission.BLUETOOTH_ADMIN"
-25-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:12:22-71
+25-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:10:22-71
 26        android:maxSdkVersion="30" />
-26-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:13:9-35
-27    <!--
-28 Needed only if your app looks for Bluetooth devices.
-29         You must add an attribute to this permission, or declare the
-30         ACCESS_FINE_LOCATION permission, depending on the results when you
-31         check location usage in your app.
-32    -->
-33    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-33-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:19:5-73
-33-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:19:22-70
-34    <!--
-35 Needed only if your app makes the device discoverable to Bluetooth
-36         devices.
-37    -->
-38    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
-38-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:23:5-78
-38-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:23:22-75
-39    <!--
-40 Needed only if your app communicates with already-paired Bluetooth
-41         devices.
-42    -->
-43    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-43-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:27:5-76
-43-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:27:22-73
-44    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-44-->[com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
-44-->[com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
-45    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-45-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:5-82
-45-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:22-79
-46    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-46-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:5-110
-46-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:22-107
-47
-48    <application
-48-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:28:5-47:19
-49        android:name="com.projectname.MainApplication"
-49-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:29:7-38
-50        android:allowBackup="false"
-50-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:33:7-34
-51        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-51-->[androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-52        android:debuggable="true"
-53        android:icon="@mipmap/ic_launcher"
-53-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:31:7-41
-54        android:label="@string/app_name"
-54-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:30:7-39
-55        android:roundIcon="@mipmap/ic_launcher_round"
-55-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:32:7-52
-56        android:theme="@style/AppTheme"
-56-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:34:7-38
-57        android:usesCleartextTraffic="true" >
-57-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:8:9-44
-58        <activity
-58-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:9-111
-59            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-59-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:19-83
-60            android:exported="false" />
-60-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:84-108
+26-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:11:9-35
+27    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+27-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:12:5-73
+27-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:12:22-70
+28    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+28-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:13:5-78
+28-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:13:22-75
+29    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+29-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:14:5-76
+29-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:14:22-73
+30    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+30-->[com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
+30-->[com.facebook.flipper:flipper:0.125.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\b2ec3232205e095c09543a31d56ae642\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+31    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+31-->[:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+31-->[:react-native-ble-manager] C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\node_modules\react-native-ble-manager\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+32    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+32-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:5-82
+32-->[com.google.android.gms:play-services-iid:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\a0982743ceb7482c5c4e499dee9e0872\transformed\jetified-play-services-iid-17.0.0\AndroidManifest.xml:23:22-79
+33    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+33-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:5-110
+33-->[com.android.installreferrer:installreferrer:1.1.2] C:\Users\YuNiwa\.gradle\caches\transforms-3\9fd42d7986dac23e35406ccd740b9a09\transformed\jetified-installreferrer-1.1.2\AndroidManifest.xml:9:22-107
+34
+35    <application
+35-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:16:5-35:19
+36        android:name="com.projectname.MainApplication"
+36-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:17:7-38
+37        android:allowBackup="false"
+37-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:21:7-34
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.6.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\5c61d7afbc1bcd99cb491da6ba2ee6c1\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+39        android:debuggable="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:19:7-41
+41        android:label="@string/app_name"
+41-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:18:7-39
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:20:7-52
+43        android:theme="@style/AppTheme"
+43-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:22:7-38
+44        android:usesCleartextTraffic="true" >
+44-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:8:9-44
+45        <activity
+45-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:9-111
+46            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+46-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:19-83
+47            android:exported="false" />
+47-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\debug\AndroidManifest.xml:11:84-108
+48        <activity
+48-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:23:7-34:18
+49            android:name="com.projectname.MainActivity"
+49-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:24:9-37
+50            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+50-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:26:9-118
+51            android:exported="true"
+51-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:29:9-32
+52            android:label="@string/app_name"
+52-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:25:9-41
+53            android:launchMode="singleTask"
+53-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:27:9-40
+54            android:windowSoftInputMode="adjustResize" >
+54-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:28:9-51
+55            <intent-filter>
+55-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:30:9-33:25
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:31:13-65
+56-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:31:21-62
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:32:13-73
+58-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:32:23-70
+59            </intent-filter>
+60        </activity>
 61        <activity
-61-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:35:7-46:18
-62            android:name="com.projectname.MainActivity"
-62-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:36:9-37
-63            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-63-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:38:9-118
-64            android:exported="true"
-64-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:41:9-32
-65            android:label="@string/app_name"
-65-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:37:9-41
-66            android:launchMode="singleTask"
-66-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:39:9-40
-67            android:windowSoftInputMode="adjustResize" >
-67-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:40:9-51
-68            <intent-filter>
-68-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:42:9-45:25
-69                <action android:name="android.intent.action.MAIN" />
-69-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:43:13-65
-69-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:43:21-62
+61-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+62            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+62-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+63            android:exported="false"
+63-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+64            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+64-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+65
+66        <meta-data
+66-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+67            android:name="com.google.android.gms.version"
+67-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+68            android:value="@integer/google_play_services_version" />
+68-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+69    </application>
 70
-71                <category android:name="android.intent.category.LAUNCHER" />
-71-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:44:13-73
-71-->C:\Users\YuNiwa\Desktop\gosui_react\GosuiCheckReact\android\app\src\main\AndroidManifest.xml:44:23-70
-72            </intent-filter>
-73        </activity>
-74        <activity
-74-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-75-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-76            android:exported="false"
-76-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-77-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\4c6541f5a0debbff754d3f6a1ab5ee55\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-78
-79        <meta-data
-79-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-80            android:name="com.google.android.gms.version"
-80-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-81            android:value="@integer/google_play_services_version" />
-81-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\YuNiwa\.gradle\caches\transforms-3\6d07939cea62d942059014120005b689\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-82    </application>
-83
-84</manifest>
+71</manifest>
