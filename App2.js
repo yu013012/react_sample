@@ -134,8 +134,11 @@ export default class App extends Component<{}> {
       token = uniqueId;
     });
 
-    // センサーデータ読み込み
-    this.loadItem();
+    // レンダリング後に処理しないとエラーになる
+    setTimeout(() => {
+      // センサーデータ読み込み
+      this.loadItem();
+    }, 1000);
 
     // 1.5秒ごとにalertを実行
     setInterval(() => {
@@ -244,7 +247,6 @@ export default class App extends Component<{}> {
       // 1時間スキャンする
       BleManager.scan([], 18000, true).then(() => {
         // スキャンすると下記イベントが呼ばれる
-        // yniwa
         setInterval(() => {
           if (uuid1 != undefined && connected1 != 3) {
             blue_connect(uuid1, 1, connected1)
@@ -296,8 +298,7 @@ export default class App extends Component<{}> {
             blue_write(uuid10, uuid10_ios, 10, connected10)
             blue_notification(uuid10, 10, connected10)
           }
-        }, 5000);
-        // yniwa
+        }, 3000);
       }).catch((error) => {
         console.log("error4");
       });

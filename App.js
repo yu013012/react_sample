@@ -22,10 +22,10 @@ import DeviceInfo from 'react-native-device-info';
 import BleManager from 'react-native-ble-manager';
 
 // テスト環境
-//let URL = "https://www.cloudtest2.pw/";
+let URL = "https://www.cloudtest2.pw/";
 
 // 本番環境
-let URL = "https://www.it-service.co.jp/";
+//let URL = "https://www.it-service.co.jp/";
 
 // 他メソッドで使うためthisとnavigationを下記に格納
 let this_, navigation_;
